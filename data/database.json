@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "id": "prod-livinda",
+      "name": "Salon 6P Livinda",
+      "slug": "salon-6p-livinda",
+      "category": "صالونات",
+      "description": "صالون فاخر مكون من 6 مقاعد بتصميم عصري وأنسجة راقية تمنح منزلك فخامة استثنائية وراحة متناهية. متوفر حصرياً لدى معرض أثاث الثقة جيجل 18.",
+      "images": [
+        "/src/assets/images/salon_livinda_showcase_1791306326700.jpg",
+        "/src/assets/images/showroom_gallery_jijel_1791306361669.jpg"
+      ],
+      "mainImage": "/src/assets/images/salon_livinda_showcase_1791306326700.jpg",
+      "price": null,
+      "availability": "متوفر",
+      "featured": true,
+      "archived": false,
+      "createdAt": "2026-10-06T17:16:06.873Z",
+      "updatedAt": "2026-10-06T17:16:06.873Z"
+    },
+    {
+      "id": "prod-pilot-plus",
+      "name": "Salon Pilot Plus",
+      "slug": "salon-pilot-plus",
+      "category": "صالونات",
+      "description": "طقم صالون عصري ومتميز بتفاصيل متقونة وهيكل متين يجسد أرقى معايير الأناقة والراحة المعاصرة. تصميم فخم يضفي طابعاً ملكياً على غرفة الجلوس.",
+      "images": [
+        "/src/assets/images/salon_pilot_plus_showcase_1791306337877.jpg",
+        "/src/assets/images/showroom_gallery_jijel_1791306361669.jpg"
+      ],
+      "mainImage": "/src/assets/images/salon_pilot_plus_showcase_1791306337877.jpg",
+      "price": null,
+      "availability": "متوفر",
+      "featured": true,
+      "archived": false,
+      "createdAt": "2026-10-06T17:16:06.873Z",
+      "updatedAt": "2026-10-06T17:16:06.873Z"
+    },
+    {
+      "id": "prod-master-bedroom",
+      "name": "غرفة نوم ماستر فاخرة",
+      "slug": "luxury-master-bedroom",
+      "category": "غرف نوم",
+      "description": "تشكيلة غرف نوم راقية بتصميم متناسق وخامات عالية الجودة تضفي سكينة وفخامة على مساحتكم الخاصة. تشمل سريراً مريحاً وخزانة ملابس وطاولات سرير متطابقة.",
+      "images": [
+        "/src/assets/images/bedroom_luxury_suite_1791306350443.jpg",
+        "/src/assets/images/showroom_gallery_jijel_1791306361669.jpg"
+      ],
+      "mainImage": "/src/assets/images/bedroom_luxury_suite_1791306350443.jpg",
+      "price": null,
+      "availability": "متوفر",
+      "featured": true,
+      "archived": false,
+      "createdAt": "2026-10-06T17:16:06.873Z",
+      "updatedAt": "2026-10-06T17:16:06.873Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-salons",
+      "name": "صالونات",
+      "slug": "salons",
+      "description": "تشكيلة صالونات فاخرة تجمع بين الراحة الاستثنائية والأناقة المعاصرة"
+    },
+    {
+      "id": "cat-bedrooms",
+      "name": "غرف نوم",
+      "slug": "bedrooms",
+      "description": "غرف نوم راقية بتصميم هادئ ومدروس تمنحكم أقصى درجات الراحة"
+    }
+  ],
+  "adminSessions": [
+    {
+      "token": "c7578cbcf7f982d8b919b5a3387f5c89d03bcb01807b8d447158569b17ad84e4",
+      "email": "admin@confiance18.dz",
+      "createdAt": 1791306977292
+    }
+  ],
+  "storeInfo": {
+    "name": "أثاث الثقة جيجل 18",
+    "tagline": "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة.",
+    "address": "بورمل، جيجل، الجزائر",
+    "city": "جيجل",
+    "primaryPhone": "0560 10 77 45",
+    "additionalPhones": [
+      "0664 02 99 68",
+      "0659 02 21 99"
+    ],
+    "email": "meubleconfiancejijel18@gmail.com",
+    "googleMapsUrl": "https://maps.app.goo.gl/XYLZfTao58Y5pydc6",
+    "facebookFollowers": "73,000+",
+    "showroomDetails": "معرض داخلي فاخر ومجهز بالكامل، يمتد على عدة مستويات بما في ذلك طابق تحت الأرض لعرض أرقى التشكيلات."
+  }
+}

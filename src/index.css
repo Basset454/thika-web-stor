@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Noto Serif Arabic', 'Playfair Display', serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: #FAF9F5;
+    color: #1A1A1A;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: clip;
+    min-height: 100vh;
+  }
+
+  /* Headings typography reset for Arabic editorial elegance */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    letter-spacing: normal;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.font-serif-luxury {
+  font-family: var(--font-serif);
+  letter-spacing: 0;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+.font-sans-ar {
+  font-family: var(--font-sans);
+}
+
+/* Editorial line clamp with natural Arabic line break balancing */
+.text-balance-ar {
+  text-wrap: balance;
+  line-break: strict;
+}
+
+/* Custom scrollbar for luxury feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F1EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4B5A5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A08F7D;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
