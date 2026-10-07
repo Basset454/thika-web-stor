@@ -23,31 +23,31 @@ export const Salons: React.FC = () => {
   }, []);
 
   return (
-    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-16">
+    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-16 font-cairo">
       {/* Editorial Header */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#EAE6DD] pb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#EEEEEE] pb-12">
         <div className="lg:col-span-8 space-y-3.5">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#8C7355]">
+          <div className="inline-flex items-center gap-2 text-xs font-bold text-[#FF551A]">
             <Sparkles className="w-3.5 h-3.5" />
             <span>قسم الصالونات الفاخرة</span>
           </div>
-          <h1 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] leading-[1.25] text-balance-ar">
+          <h1 className="font-cairo text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1E1E1E] leading-[1.25] text-balance-ar">
             الصالونات المعاصرة وأطقم الجلوس
           </h1>
-          <p className="text-sm md:text-base text-[#595349] max-w-2xl leading-relaxed md:leading-[1.8] font-normal">
+          <p className="text-sm md:text-base text-[#4E4E4E] max-w-2xl leading-relaxed md:leading-[1.8] font-normal">
             تشكيلة صالونات مصممة بأعلى معايير الراحة والأناقة. تتميز بهياكل صلبة، حشوات عالية المرونة، وأقمشة مقاومة للاستخدام اليومي تمنح مجلسكم فخامة دائمة.
           </p>
         </div>
 
         <div className="lg:col-span-4 lg:text-left">
-          <div className="bg-[#F5F2EA] p-5 rounded-xs border border-[#E5DFD3] space-y-2">
-            <span className="text-xs text-[#8C7355] font-semibold block">للاستفسار عن المقاسات والألوان</span>
+          <div className="bg-[#F8F8F8] p-5 rounded-xs border border-[#E5E5E5] space-y-2">
+            <span className="text-xs text-[#FF551A] font-bold block">للاستفسار عن المقاسات والألوان</span>
             <a
               href="tel:0560107745"
-              className="inline-flex items-center gap-2 text-sm md:text-base font-bold text-[#1A1A1A] hover:text-[#8C7355] transition-colors"
+              className="inline-flex items-center gap-2 text-sm md:text-base font-bold text-[#1E1E1E] hover:text-[#FF551A] transition-colors"
               dir="ltr"
             >
-              <Phone className="w-4 h-4 text-[#8C7355]" />
+              <Phone className="w-4 h-4 text-[#FF551A]" />
               <span>0560 10 77 45</span>
             </a>
           </div>
@@ -59,7 +59,7 @@ export const Salons: React.FC = () => {
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((n) => (
-              <div key={n} className="h-96 bg-[#F0ECE4] rounded-xs animate-pulse" />
+              <div key={n} className="h-96 bg-[#F5F5F5] rounded-xs animate-pulse" />
             ))}
           </div>
         ) : salons.length > 0 ? (
@@ -69,8 +69,8 @@ export const Salons: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 bg-white border border-[#EAE6DD] rounded-xs p-12">
-            <p className="text-base text-[#1A1A1A]">لا توجد معروضات متاحة في قسم الصالونات حالياً</p>
+          <div className="text-center py-20 bg-white border border-[#EEEEEE] rounded-xs p-12">
+            <p className="text-base text-[#1E1E1E]">لا توجد معروضات متاحة في قسم الصالونات حالياً</p>
           </div>
         )}
       </div>

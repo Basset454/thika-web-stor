@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { TrustLogo } from '../../components/TrustLogo';
 import { ShieldCheck, Lock, Mail, AlertCircle, ArrowLeft } from 'lucide-react';
 
 export const AdminLogin: React.FC = () => {
@@ -32,17 +33,17 @@ export const AdminLogin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#141311] flex items-center justify-center p-6 text-white">
-      <div className="w-full max-w-md bg-[#1E1C18] border border-[#2E2B25] p-8 md:p-10 rounded-xs space-y-8 shadow-2xl">
+    <div className="min-h-screen bg-[#1E1E1E] flex items-center justify-center p-6 text-white font-cairo">
+      <div className="w-full max-w-md bg-[#262626] border border-[#333333] p-8 md:p-10 rounded-xs space-y-8 shadow-2xl">
         {/* Brand Header */}
-        <div className="text-center space-y-2">
-          <div className="w-12 h-12 bg-[#2C2822] text-[#C5A880] rounded-xs flex items-center justify-center mx-auto border border-[#3E382F]">
-            <ShieldCheck className="w-6 h-6" />
+        <div className="text-center space-y-3">
+          <div className="flex justify-center mb-1">
+            <TrustLogo variant="dark" size="lg" />
           </div>
-          <h1 className="font-serif-luxury text-2xl font-bold text-[#FAF9F5]">
+          <h1 className="font-cairo text-2xl font-bold text-white">
             لوحة تحكم أثاث الثقة
           </h1>
-          <p className="text-xs text-[#8C8476]">
+          <p className="text-xs text-[#999999]">
             بوابة الإدارة المركزية لمعرض بورمل، جيجل 18
           </p>
         </div>
@@ -65,23 +66,23 @@ export const AdminLogin: React.FC = () => {
                 placeholder="admin@confiance18.dz"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pr-10 pl-4 py-2.5 bg-[#141311] border border-[#332F28] rounded-xs text-xs text-white focus:outline-hidden focus:border-[#C5A880]"
+                className="w-full pr-10 pl-4 py-2.5 bg-[#1E1E1E] border border-[#383838] rounded-xs text-xs text-white focus:outline-hidden focus:border-[#FF551A]"
                 dir="ltr"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs text-[#B8B2A7] mb-1.5">كلمة المرور</label>
+            <label className="block text-xs text-[#CCCCCC] mb-1.5 font-bold">كلمة المرور</label>
             <div className="relative">
-              <Lock className="w-4 h-4 text-[#7A7265] absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <Lock className="w-4 h-4 text-[#888888] absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="password"
                 required
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pr-10 pl-4 py-2.5 bg-[#141311] border border-[#332F28] rounded-xs text-xs text-white focus:outline-hidden focus:border-[#C5A880]"
+                className="w-full pr-10 pl-4 py-2.5 bg-[#1E1E1E] border border-[#383838] rounded-xs text-xs text-white focus:outline-hidden focus:border-[#FF551A]"
                 dir="ltr"
               />
             </div>
@@ -90,19 +91,19 @@ export const AdminLogin: React.FC = () => {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-3 bg-[#C5A880] hover:bg-[#D4BC98] text-[#1A1A1A] text-xs font-bold rounded-xs transition-colors disabled:opacity-50 mt-2"
+            className="w-full py-3 bg-[#FF551A] hover:bg-[#E04812] text-white text-xs font-bold rounded-xs transition-colors disabled:opacity-50 mt-2 shadow-xs"
           >
             {submitting ? 'جاري التحقق...' : 'تسجيل الدخول'}
           </button>
         </form>
 
         {/* Quick test credentials assistance */}
-        <div className="pt-4 border-t border-[#2C2923] text-center space-y-2">
-          <p className="text-[11px] text-[#7A7265]">بيانات الدخول الافتراضية للنظام:</p>
+        <div className="pt-4 border-t border-[#333333] text-center space-y-2">
+          <p className="text-[11px] text-[#888888]">بيانات الدخول الافتراضية للنظام:</p>
           <button
             type="button"
             onClick={handleUseDefault}
-            className="text-xs text-[#C5A880] hover:underline"
+            className="text-xs text-[#FF551A] hover:underline font-bold"
           >
             تعبئة بيانات المسؤول تلقائياً
           </button>

@@ -64,31 +64,31 @@ export const Products: React.FC = () => {
   });
 
   return (
-    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-12">
+    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-12 font-cairo">
       {/* Editorial Header */}
       <div className="space-y-3.5 max-w-3xl">
-        <span className="text-xs font-semibold text-[#8C7355] block">
+        <span className="text-xs font-bold text-[#FF551A] block">
           الكتالوج الكامل
         </span>
-        <h1 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A1A1A] leading-[1.3] text-balance-ar">
+        <h1 className="font-cairo text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1E1E] leading-[1.3] text-balance-ar">
           تشكيلات الأثاث المعروضة
         </h1>
-        <p className="text-sm md:text-base text-[#595349] leading-relaxed md:leading-[1.8] font-normal">
+        <p className="text-sm md:text-base text-[#4E4E4E] leading-relaxed md:leading-[1.8] font-normal">
           تصفح أرقى أطقم الصالونات وغرف النوم المتوفرة في معرض أثاث الثقة ببورمل، جيجل. جميع القطع معروضة للمعاينة الحية.
         </p>
       </div>
 
       {/* Control Bar: Categories & Search */}
-      <div className="space-y-6 pt-4 border-t border-[#EAE6DD]">
+      <div className="space-y-6 pt-4 border-t border-[#EEEEEE]">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          {/* Segmented Category Buttons (allowed as interactive filter controls per design guidelines) */}
+          {/* Segmented Category Buttons */}
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => handleCategorySelect('الكل')}
-              className={`px-4 py-2 text-xs font-semibold rounded-xs transition-colors whitespace-nowrap ${
+              className={`px-4 py-2 text-xs font-bold rounded-xs transition-colors whitespace-nowrap ${
                 selectedCategory === 'الكل'
-                  ? 'bg-[#1A1A1A] text-white'
-                  : 'bg-[#EFECE4] text-[#4A463F] hover:bg-[#E5DFD3]'
+                  ? 'bg-[#FF551A] text-white shadow-xs'
+                  : 'bg-[#F5F5F5] text-[#1E1E1E] hover:bg-[#EAEAEA]'
               }`}
             >
               جميع المنتجات ({products.length})
@@ -97,10 +97,10 @@ export const Products: React.FC = () => {
               <button
                 key={c.id}
                 onClick={() => handleCategorySelect(c.name)}
-                className={`px-4 py-2 text-xs font-semibold rounded-xs transition-colors whitespace-nowrap ${
+                className={`px-4 py-2 text-xs font-bold rounded-xs transition-colors whitespace-nowrap ${
                   selectedCategory === c.name
-                    ? 'bg-[#1A1A1A] text-white'
-                    : 'bg-[#EFECE4] text-[#4A463F] hover:bg-[#E5DFD3]'
+                    ? 'bg-[#FF551A] text-white shadow-xs'
+                    : 'bg-[#F5F5F5] text-[#1E1E1E] hover:bg-[#EAEAEA]'
                 }`}
               >
                 {c.name} {c.productCount !== undefined && `(${c.productCount})`}
@@ -110,25 +110,25 @@ export const Products: React.FC = () => {
 
           {/* Search Input */}
           <div className="relative min-w-[260px]">
-            <Search className="w-4 h-4 text-[#8C8275] absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#888888] absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               placeholder="ابحث عن اسم الموديل أو الصالون..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pr-10 pl-4 py-2 text-xs bg-white border border-[#DDD5C5] rounded-xs focus:outline-hidden focus:border-[#1A1A1A] text-[#1A1A1A]"
+              className="w-full pr-10 pl-4 py-2 text-xs bg-white border border-[#E0E0E0] rounded-xs focus:outline-hidden focus:border-[#FF551A] text-[#1E1E1E]"
             />
           </div>
         </div>
 
         {/* Secondary Filter: Availability */}
-        <div className="flex items-center gap-4 text-xs text-[#7A7265] pt-2">
+        <div className="flex items-center gap-4 text-xs text-[#757575] pt-2">
           <span className="font-medium">حالة التوفر:</span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setAvailabilityFilter('all')}
-              className={`hover:text-[#1A1A1A] transition-colors ${
-                availabilityFilter === 'all' ? 'font-bold text-[#1A1A1A] underline underline-offset-4' : ''
+              className={`hover:text-[#1E1E1E] transition-colors ${
+                availabilityFilter === 'all' ? 'font-bold text-[#FF551A] underline underline-offset-4 decoration-[#FF551A]' : ''
               }`}
             >
               الكل
@@ -136,8 +136,8 @@ export const Products: React.FC = () => {
             <span>/</span>
             <button
               onClick={() => setAvailabilityFilter('متوفر')}
-              className={`hover:text-[#1A1A1A] transition-colors ${
-                availabilityFilter === 'متوفر' ? 'font-bold text-[#1A1A1A] underline underline-offset-4' : ''
+              className={`hover:text-[#1E1E1E] transition-colors ${
+                availabilityFilter === 'متوفر' ? 'font-bold text-[#FF551A] underline underline-offset-4 decoration-[#FF551A]' : ''
               }`}
             >
               متوفر حالياً
@@ -145,8 +145,8 @@ export const Products: React.FC = () => {
             <span>/</span>
             <button
               onClick={() => setAvailabilityFilter('غير متوفر')}
-              className={`hover:text-[#1A1A1A] transition-colors ${
-                availabilityFilter === 'غير متوفر' ? 'font-bold text-[#1A1A1A] underline underline-offset-4' : ''
+              className={`hover:text-[#1E1E1E] transition-colors ${
+                availabilityFilter === 'غير متوفر' ? 'font-bold text-[#FF551A] underline underline-offset-4 decoration-[#FF551A]' : ''
               }`}
             >
               غير متوفر
@@ -160,7 +160,7 @@ export const Products: React.FC = () => {
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((n) => (
-              <div key={n} className="h-96 bg-[#F0ECE4] rounded-xs animate-pulse" />
+              <div key={n} className="h-96 bg-[#F5F5F5] rounded-xs animate-pulse" />
             ))}
           </div>
         ) : filteredProducts.length > 0 ? (
@@ -170,9 +170,9 @@ export const Products: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 bg-white border border-[#EAE6DD] rounded-xs p-12 space-y-4">
-            <p className="text-base font-semibold text-[#1A1A1A]">لا توجد نتائج مطابقة لبحثك</p>
-            <p className="text-xs text-[#7D7365]">
+          <div className="text-center py-20 bg-white border border-[#EEEEEE] rounded-xs p-12 space-y-4">
+            <p className="text-base font-bold text-[#1E1E1E]">لا توجد نتائج مطابقة لبحثك</p>
+            <p className="text-xs text-[#757575]">
               جرب تغيير كلمات البحث أو اختيار فئة أخرى من القائمة أعلاه.
             </p>
             <button
@@ -181,7 +181,7 @@ export const Products: React.FC = () => {
                 setSearchQuery('');
                 setAvailabilityFilter('all');
               }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#EFECE4] text-xs font-semibold text-[#1A1A1A] rounded-xs hover:bg-[#E5DFD3] transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#F5F5F5] text-xs font-bold text-[#1E1E1E] rounded-xs hover:bg-[#EAEAEA] transition-colors"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>إعادة ضبط التصفية</span>

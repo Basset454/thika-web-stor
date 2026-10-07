@@ -66,27 +66,27 @@ export const EditorialProductScroll: React.FC<EditorialProductScrollProps> = ({ 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-auto md:h-[220vh] bg-[#171614] text-[#FAF9F5] border-y border-[#2B2824]"
+      className="relative w-full h-auto md:h-[220vh] bg-[#1E1E1E] text-white border-y border-[#2C2C2C] font-cairo"
     >
       {/* Sticky Viewport Container on Desktop (Zero DOM mutation, pure hardware accelerated) */}
       <div className="md:sticky md:top-0 md:h-screen w-full overflow-hidden flex flex-col justify-center py-10 md:py-0">
         {/* Editorial Section Intro */}
         <div className="max-w-7xl mx-auto px-6 w-full pt-4 md:pt-8 pb-3 md:pb-4 flex flex-col md:flex-row md:items-end justify-between gap-3">
           <div className="space-y-1.5">
-            <div className="flex items-center gap-2 text-[#C5A880]">
+            <div className="flex items-center gap-2 text-[#FF551A]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span className="text-xs font-semibold text-[#C5A880]">
+              <span className="text-xs font-bold text-[#FF551A]">
                 الكتالوج التحريري الحصري
               </span>
             </div>
-            <h2 className="font-serif-luxury text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.3] text-balance-ar">
+            <h2 className="font-cairo text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.3] text-balance-ar">
               مختارات المعرض للمعاينة
             </h2>
           </div>
 
           <Link
             to="/products"
-            className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-[#C5A880] hover:text-[#E2DDCF] transition-colors"
+            className="inline-flex items-center gap-2 text-xs md:text-sm font-bold text-[#FF551A] hover:text-white transition-colors"
           >
             <span>استعراض كافة المنتجات</span>
             <ArrowUpLeft className="w-4 h-4" />
@@ -112,7 +112,7 @@ export const EditorialProductScroll: React.FC<EditorialProductScrollProps> = ({ 
                   className="w-[270px] sm:w-[320px] md:w-[360px] lg:w-[400px] shrink-0 group flex flex-col justify-between select-none"
                 >
                   {/* Proportional Product Presentation Frame */}
-                  <div className="relative h-[180px] sm:h-[210px] md:h-[230px] lg:h-[250px] w-full rounded-xs overflow-hidden bg-[#24211D] border border-[#38332C] group-hover:border-[#C5A880]/60 transition-all duration-500">
+                  <div className="relative h-[180px] sm:h-[210px] md:h-[230px] lg:h-[250px] w-full rounded-xs overflow-hidden bg-[#262626] border border-[#383838] group-hover:border-[#FF551A]/60 transition-all duration-500">
                     <img
                       src={imageSrc}
                       alt={product.name}
@@ -122,14 +122,14 @@ export const EditorialProductScroll: React.FC<EditorialProductScrollProps> = ({ 
 
                     {/* Editorial Index Badge */}
                     <div
-                      className="absolute top-3 right-3 bg-[#141311]/85 backdrop-blur-md px-2.5 py-1 rounded-xs border border-white/10 font-serif-luxury text-xs font-bold text-[#C5A880] tabular-nums"
+                      className="absolute top-3 right-3 bg-[#1E1E1E]/90 backdrop-blur-md px-2.5 py-1 rounded-xs border border-white/10 font-cairo text-xs font-bold text-[#FF551A] tabular-nums"
                       dir="ltr"
                     >
                       № {formattedIndex}
                     </div>
 
                     {product.featured && (
-                      <div className="absolute top-3 left-3 bg-[#C5A880] text-[#1A1A1A] text-[11px] font-bold px-2.5 py-1 uppercase rounded-xs">
+                      <div className="absolute top-3 left-3 bg-[#FF551A] text-white text-[11px] font-bold px-2.5 py-1 uppercase rounded-xs">
                         مختار
                       </div>
                     )}
@@ -137,35 +137,35 @@ export const EditorialProductScroll: React.FC<EditorialProductScrollProps> = ({ 
 
                   {/* Editorial Typographic Metadata (Zero-pill) */}
                   <div className="pt-3.5 space-y-2">
-                    <div className="flex items-center justify-between text-xs text-[#B8B0A2]">
-                      <span className="font-medium text-[#C5A880]">{product.category}</span>
+                    <div className="flex items-center justify-between text-xs text-[#B8B8B8]">
+                      <span className="font-bold text-[#FF551A]">{product.category}</span>
                       <span
                         className={
                           product.availability === 'متوفر'
-                            ? 'text-emerald-400 font-semibold'
-                            : 'text-[#8C8476]'
+                            ? 'text-emerald-400 font-bold'
+                            : 'text-[#888888]'
                         }
                       >
                         {product.availability}
                       </span>
                     </div>
 
-                    <h3 className="font-serif-luxury text-xl md:text-2xl font-bold text-white group-hover:text-[#C5A880] transition-colors line-clamp-1 leading-[1.35]">
+                    <h3 className="font-cairo text-xl md:text-2xl font-bold text-white group-hover:text-[#FF551A] transition-colors line-clamp-1 leading-[1.35]">
                       {product.name}
                     </h3>
 
-                    <p className="text-xs md:text-sm text-[#C8C1B5] line-clamp-2 leading-relaxed font-normal">
+                    <p className="text-xs md:text-sm text-[#CCCCCC] line-clamp-2 leading-relaxed font-normal">
                       {product.description}
                     </p>
 
-                    <div className="pt-2 flex items-center justify-between border-t border-[#2C2924]">
+                    <div className="pt-2 flex items-center justify-between border-t border-[#333333]">
                       <div>
                         {product.price ? (
                           <span className="text-sm md:text-base font-bold text-white tabular-nums" dir="ltr">
                             {product.price.toLocaleString('fr-DZ')} DA
                           </span>
                         ) : (
-                          <span className="text-xs md:text-sm text-[#B8B0A2] font-medium">
+                          <span className="text-xs md:text-sm text-[#AAAAAA] font-medium">
                             للاستفسار عن السعر
                           </span>
                         )}
@@ -173,7 +173,7 @@ export const EditorialProductScroll: React.FC<EditorialProductScrollProps> = ({ 
 
                       <Link
                         to={`/product/${product.slug}`}
-                        className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-[#C5A880] group-hover:underline"
+                        className="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-[#FF551A] group-hover:underline"
                       >
                         <span>معاينة التفاصيل</span>
                         <ArrowUpLeft className="w-3.5 h-3.5" />

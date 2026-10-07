@@ -2,12 +2,15 @@
 
 @layer base {
   :root {
-    --font-sans: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    --font-serif: 'Noto Serif Arabic', 'Playfair Display', serif;
+    --font-sans: 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-cairo: 'Cairo', system-ui, -apple-system, sans-serif;
+    --color-primary: #1E1E1E;
+    --color-accent: #FF551A;
+    --color-bg: #FFFFFF;
   }
 
   html {
-    font-family: var(--font-sans);
+    font-family: var(--font-cairo);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -16,18 +19,18 @@
   }
 
   body {
-    background-color: #FAF9F5;
-    color: #1A1A1A;
-    font-family: var(--font-sans);
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    font-family: var(--font-cairo);
     font-weight: 400;
     line-height: 1.7;
     overflow-x: clip;
     min-height: 100vh;
   }
 
-  /* Headings typography reset for Arabic editorial elegance */
+  /* Headings typography with Cairo */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
+    font-family: var(--font-cairo);
     letter-spacing: normal;
   }
 }
@@ -40,18 +43,22 @@
   scrollbar-width: none;
 }
 
+.font-cairo {
+  font-family: var(--font-cairo);
+}
+
 .font-serif-luxury {
-  font-family: var(--font-serif);
+  font-family: var(--font-cairo);
   letter-spacing: 0;
   font-feature-settings: "kern" 1, "liga" 1;
 }
 
 .font-sans-ui {
-  font-family: var(--font-sans);
+  font-family: var(--font-cairo);
 }
 
 .font-sans-ar {
-  font-family: var(--font-sans);
+  font-family: var(--font-cairo);
 }
 
 /* Editorial line clamp with natural Arabic line break balancing */
@@ -60,20 +67,20 @@
   line-break: strict;
 }
 
-/* Custom scrollbar for luxury feel */
+/* Custom scrollbar for Trust luxury feel */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F1EA;
+  background: #F5F5F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C4B5A5;
+  background: #D4D4D4;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A08F7D;
+  background: #FF551A;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, Navigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { TrustLogo } from '../components/TrustLogo';
 import {
   LayoutDashboard,
   Package,
@@ -17,10 +18,10 @@ export const AdminLayout: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F5F4EE] flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center font-cairo">
         <div className="text-center space-y-3">
-          <div className="w-10 h-10 border-2 border-[#1A1A1A] border-t-transparent rounded-full animate-spin mx-auto"></div>
-          <p className="text-sm text-[#7D7365]">جاري التحقق من الصلاحيات...</p>
+          <div className="w-10 h-10 border-2 border-[#FF551A] border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="text-sm text-[#757575]">جاري التحقق من الصلاحيات...</p>
         </div>
       </div>
     );
@@ -38,16 +39,16 @@ export const AdminLayout: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F7F6F0] text-[#1A1A1A] flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#F8F8F8] text-[#1E1E1E] flex flex-col md:flex-row font-cairo">
       {/* Admin Sidebar */}
-      <aside className="w-full md:w-64 bg-[#1C1A17] text-[#D8D4CD] border-l border-[#2E2B27] flex flex-col shrink-0">
-        <div className="p-6 border-b border-[#2C2925]">
-          <div className="flex items-center gap-2 text-[#C5A880] mb-1">
-            <ShieldCheck className="w-5 h-5" />
-            <span className="text-xs font-semibold tracking-wider uppercase">لوحة التحكم</span>
+      <aside className="w-full md:w-64 bg-[#1E1E1E] text-[#D4D4D4] border-l border-[#2E2E2E] flex flex-col shrink-0">
+        <div className="p-6 border-b border-[#2C2C2C]">
+          <div className="flex items-center gap-2 text-[#FF551A] mb-3">
+            <ShieldCheck className="w-4 h-4" />
+            <span className="text-[11px] font-bold tracking-wider uppercase">لوحة التحكم</span>
           </div>
-          <h2 className="font-serif-luxury text-xl font-bold text-[#FAF9F5]">أثاث الثقة</h2>
-          <p className="text-[11px] text-[#8C8275] truncate mt-0.5" dir="ltr">{user?.email}</p>
+          <TrustLogo variant="dark" size="sm" />
+          <p className="text-[11px] text-[#888888] truncate mt-2 font-mono" dir="ltr">{user?.email}</p>
         </div>
 
         {/* Navigation Items */}
@@ -63,10 +64,10 @@ export const AdminLayout: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xs text-sm font-medium transition-colors ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-xs text-sm font-bold transition-colors ${
                   isActive
-                    ? 'bg-[#C5A880] text-[#1A1A1A] font-semibold'
-                    : 'text-[#B8B2A7] hover:bg-[#282522] hover:text-[#FAF9F5]'
+                    ? 'bg-[#FF551A] text-white shadow-xs'
+                    : 'text-[#AAAAAA] hover:bg-white/10 hover:text-white'
                 }`}
               >
                 <Icon className="w-4 h-4 shrink-0" />
@@ -77,12 +78,12 @@ export const AdminLayout: React.FC = () => {
         </nav>
 
         {/* External Public Store Link & Logout */}
-        <div className="p-4 border-t border-[#2C2925] space-y-1">
+        <div className="p-4 border-t border-[#2C2C2C] space-y-1">
           <Link
             to="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between px-4 py-2.5 rounded-xs text-xs text-[#A89F91] hover:text-[#FAF9F5] hover:bg-[#282522] transition-colors"
+            className="flex items-center justify-between px-4 py-2.5 rounded-xs text-xs text-[#999999] hover:text-white hover:bg-white/10 transition-colors"
           >
             <span className="flex items-center gap-2">
               <ExternalLink className="w-3.5 h-3.5" />

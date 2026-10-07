@@ -117,7 +117,7 @@ export const ShowroomCameraScene: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-auto md:h-[220vh] bg-[#11100E] text-white"
+      className="relative w-full h-auto md:h-[220vh] bg-[#1E1E1E] text-white font-cairo"
     >
       {/* DESKTOP / TABLET VIEW: Sticky Viewport with Camera Dolly (md:block) */}
       <div className="hidden md:block sticky top-0 h-screen w-full overflow-hidden select-none">
@@ -131,7 +131,7 @@ export const ShowroomCameraScene: React.FC = () => {
             loading="lazy"
           />
           {/* Measured cinematic vignette scrim */}
-          <div className="absolute inset-0 bg-radial from-transparent via-[#11100E]/40 to-[#11100E]/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-radial from-transparent via-[#1E1E1E]/40 to-[#1E1E1E]/85 pointer-events-none" />
         </div>
 
         {/* Floating Top Title Box */}
@@ -139,10 +139,10 @@ export const ShowroomCameraScene: React.FC = () => {
           ref={titleBoxRef}
           className="absolute top-8 md:top-14 inset-x-0 z-10 text-center max-w-2xl mx-auto px-6 pointer-events-none will-change-transform"
         >
-          <span className="text-xs font-semibold text-[#C5A880] block mb-1.5">
+          <span className="text-xs font-bold text-[#FF551A] block mb-1.5">
             جولة معمارية في المعرض
           </span>
-          <h2 className="font-serif-luxury text-2xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md leading-[1.3] text-balance-ar">
+          <h2 className="font-cairo text-2xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md leading-[1.3] text-balance-ar">
             معرض فسيح يتنفس الأناقة
           </h2>
         </div>
@@ -153,18 +153,18 @@ export const ShowroomCameraScene: React.FC = () => {
             {/* Annotation Card 1: Showroom Floors & Basement */}
             <div
               ref={card1Ref}
-              className="bg-[#1A1815]/90 backdrop-blur-md p-6 rounded-xs border border-[#3E382E] shadow-2xl opacity-0 pointer-events-none will-change-transform w-full"
+              className="bg-[#242424]/90 backdrop-blur-md p-6 rounded-xs border border-[#3E3E3E] shadow-2xl opacity-0 pointer-events-none will-change-transform w-full"
             >
-              <div className="flex items-center gap-2 text-[#C5A880] mb-2">
+              <div className="flex items-center gap-2 text-[#FF551A] mb-2">
                 <MapPin className="w-4 h-4" />
-                <span className="text-xs font-bold text-[#C5A880]">
+                <span className="text-xs font-bold text-[#FF551A]">
                   بورمل · جيجل
                 </span>
               </div>
-              <h3 className="font-serif-luxury text-xl font-bold text-white mb-2 leading-[1.35]">
+              <h3 className="font-cairo text-xl font-bold text-white mb-2 leading-[1.35]">
                 معرض داخلي مع طابق تحت الأرض
               </h3>
-              <p className="text-sm text-[#D4CDC2] leading-relaxed font-normal">
+              <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
                 مساحة عرض شاسعة صممت لتتيح لكم التجول بين الأطقم المعروضة وتفقد راحة المقاعد وجودة الخشب والأقمشة عن قرب.
               </p>
             </div>
@@ -172,18 +172,18 @@ export const ShowroomCameraScene: React.FC = () => {
             {/* Annotation Card 2: Craftsmanship & Community */}
             <div
               ref={card2Ref}
-              className="bg-[#1A1815]/90 backdrop-blur-md p-6 rounded-xs border border-[#3E382E] shadow-2xl opacity-0 pointer-events-none will-change-transform w-full absolute inset-0"
+              className="bg-[#242424]/90 backdrop-blur-md p-6 rounded-xs border border-[#3E3E3E] shadow-2xl opacity-0 pointer-events-none will-change-transform w-full absolute inset-0"
             >
-              <div className="flex items-center gap-2 text-[#C5A880] mb-2">
+              <div className="flex items-center gap-2 text-[#FF551A] mb-2">
                 <ShieldCheck className="w-4 h-4" />
-                <span className="text-xs font-bold text-[#C5A880]">
+                <span className="text-xs font-bold text-[#FF551A]">
                   مجتمع الثقة
                 </span>
               </div>
-              <h3 className="font-serif-luxury text-xl font-bold text-white mb-2 leading-[1.35]">
+              <h3 className="font-cairo text-xl font-bold text-white mb-2 leading-[1.35]">
                 أكثر من 73,000 متابع يثقون في معروضاتنا
               </h3>
-              <p className="text-sm text-[#D4CDC2] leading-relaxed font-normal">
+              <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
                 "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة." نضع معايير الحرفية والصدق في مقدمة كل تعامل.
               </p>
             </div>
@@ -194,52 +194,52 @@ export const ShowroomCameraScene: React.FC = () => {
       {/* MOBILE VIEW: Natural Sequential Layout with 100% Visibility (md:hidden) */}
       <div className="md:hidden py-12 px-6 space-y-6">
         <div className="space-y-2 text-center pb-2">
-          <span className="text-xs font-semibold text-[#C5A880] block">
+          <span className="text-xs font-bold text-[#FF551A] block">
             جولة معمارية في المعرض
           </span>
-          <h2 className="font-serif-luxury text-2xl font-bold text-white leading-[1.3]">
+          <h2 className="font-cairo text-2xl font-bold text-white leading-[1.3]">
             معرض فسيح يتنفس الأناقة
           </h2>
         </div>
 
-        <div className="relative aspect-16/10 w-full rounded-xs overflow-hidden border border-[#3E382E] shadow-lg">
+        <div className="relative aspect-16/10 w-full rounded-xs overflow-hidden border border-[#3E3E3E] shadow-lg">
           <img
             src="/src/assets/images/showroom_gallery_jijel_1791306361669.jpg"
             alt="معرض أثاث الثقة في بورمل جيجل"
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#11100E] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent" />
         </div>
 
         {/* Feature Card 1 on Mobile */}
-        <div className="bg-[#1A1815] p-5 rounded-xs border border-[#3E382E] space-y-2 shadow-md">
-          <div className="flex items-center gap-2 text-[#C5A880]">
+        <div className="bg-[#242424] p-5 rounded-xs border border-[#3E3E3E] space-y-2 shadow-md">
+          <div className="flex items-center gap-2 text-[#FF551A]">
             <MapPin className="w-4 h-4" />
-            <span className="text-xs font-bold text-[#C5A880]">
+            <span className="text-xs font-bold text-[#FF551A]">
               بورمل · جيجل
             </span>
           </div>
-          <h3 className="font-serif-luxury text-lg font-bold text-white leading-[1.35]">
+          <h3 className="font-cairo text-lg font-bold text-white leading-[1.35]">
             معرض داخلي مع طابق تحت الأرض
           </h3>
-          <p className="text-sm text-[#D4CDC2] leading-relaxed font-normal">
+          <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
             مساحة عرض شاسعة صممت لتتيح لكم التجول بين الأطقم المعروضة وتفقد راحة المقاعد وجودة الخشب والأقمشة عن قرب.
           </p>
         </div>
 
         {/* Feature Card 2 on Mobile */}
-        <div className="bg-[#1A1815] p-5 rounded-xs border border-[#3E382E] space-y-2 shadow-md">
-          <div className="flex items-center gap-2 text-[#C5A880]">
+        <div className="bg-[#242424] p-5 rounded-xs border border-[#3E3E3E] space-y-2 shadow-md">
+          <div className="flex items-center gap-2 text-[#FF551A]">
             <ShieldCheck className="w-4 h-4" />
-            <span className="text-xs font-bold text-[#C5A880]">
+            <span className="text-xs font-bold text-[#FF551A]">
               مجتمع الثقة
             </span>
           </div>
-          <h3 className="font-serif-luxury text-lg font-bold text-white leading-[1.35]">
+          <h3 className="font-cairo text-lg font-bold text-white leading-[1.35]">
             أكثر من 73,000 متابع يثقون في معروضاتنا
           </h3>
-          <p className="text-sm text-[#D4CDC2] leading-relaxed font-normal">
+          <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
             "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة." نضع معايير الحرفية والصدق في مقدمة كل تعامل.
           </p>
         </div>

@@ -94,7 +94,7 @@ export const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full bg-[#FAF9F5] text-[#1A1A1A]">
+    <div className="relative w-full bg-white text-[#1E1E1E]">
       {/* 1. HERO — CINEMATIC OPENING (Dark theme) */}
       <div data-nav-theme="dark">
         <CinematicHero />

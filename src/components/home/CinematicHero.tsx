@@ -147,7 +147,7 @@ export const CinematicHero: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[100svh] md:h-[150vh] min-h-[580px] bg-[#12110F] text-white overflow-hidden"
+      className="relative w-full h-[100svh] md:h-[150vh] min-h-[580px] bg-[#1E1E1E] text-white overflow-hidden font-cairo"
     >
       {/* Sticky/Pinned Visual Viewport Container */}
       <div className="sticky top-0 h-[100svh] md:h-screen w-full overflow-hidden flex items-center justify-center pt-20 md:pt-16 pb-8 md:pb-0">
@@ -163,7 +163,7 @@ export const CinematicHero: React.FC = () => {
           {/* Measured Multi-Layered Scrim */}
           <div
             ref={scrimRef}
-            className="absolute inset-0 bg-gradient-to-t from-[#141311] via-[#141311]/60 to-[#141311]/40 transition-opacity"
+            className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-[#1E1E1E]/60 to-[#1E1E1E]/30 transition-opacity"
           />
         </div>
 
@@ -172,18 +172,18 @@ export const CinematicHero: React.FC = () => {
           {/* Top Location Kicker */}
           <div
             ref={badgeRef}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs md:text-sm text-[#EAE6DD] font-medium"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs md:text-sm text-white/90 font-medium font-cairo"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#FF551A]" />
             <span>بورمل · جيجل 18 · الجزائر</span>
             <span aria-hidden="true" className="opacity-40">·</span>
-            <span className="text-[#C5A880] font-semibold">معرض الأثاث الفاخر</span>
+            <span className="text-[#FF551A] font-bold">معرض الأثاث الفاخر</span>
           </div>
 
           {/* Primary Editorial Headline */}
           <h1
             ref={titleRef}
-            className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] font-bold leading-[1.3] md:leading-[1.22] text-white drop-shadow-md text-balance-ar will-change-transform"
+            className="font-cairo text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.2rem] font-bold leading-[1.3] md:leading-[1.22] text-white drop-shadow-md text-balance-ar will-change-transform"
           >
             أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة
           </h1>
@@ -191,7 +191,7 @@ export const CinematicHero: React.FC = () => {
           {/* Supporting Prose */}
           <p
             ref={subtitleRef}
-            className="text-sm sm:text-base md:text-lg text-[#E2DDD5] max-w-2xl mx-auto leading-relaxed md:leading-[1.8] font-normal will-change-transform"
+            className="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed md:leading-[1.8] font-normal will-change-transform font-cairo"
           >
             وجهتكم الرائدة في بورمل بجيجل لأرقى الصالونات المعاصرة وغرف النوم المصممة بدقة لتمنح منازلكم دفئاً استثنائياً وفخامة تدوم.
           </p>
@@ -199,11 +199,11 @@ export const CinematicHero: React.FC = () => {
           {/* Action CTAs */}
           <div
             ref={actionsRef}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2 will-change-transform font-medium"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2 will-change-transform font-medium font-cairo"
           >
             <Link
               to="/products"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C5A880] hover:bg-[#D4BC98] text-[#1A1A1A] text-sm font-semibold rounded-xs transition-colors shadow-lg group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#FF551A] hover:bg-[#E04812] text-white text-sm font-bold rounded-xs transition-colors shadow-lg group"
             >
               <span>اكتشف التشكيلة</span>
               <ArrowUpLeft className="w-4 h-4 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -211,21 +211,21 @@ export const CinematicHero: React.FC = () => {
 
             <Link
               to="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-xs backdrop-blur-md border border-white/25 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xs backdrop-blur-md border border-white/25 transition-colors"
             >
               <span>تواصل مع الإدارة</span>
-              <Phone className="w-4 h-4 text-[#C5A880]" />
+              <Phone className="w-4 h-4 text-[#FF551A]" />
             </Link>
           </div>
         </div>
 
         {/* Scroll Indicator Prompt (shown only on tall desktop viewports) */}
-        <div className="hidden lg:flex absolute bottom-6 inset-x-0 flex-col items-center justify-center gap-1.5 pointer-events-none opacity-60">
-          <span className="text-[10px] tracking-widest text-[#B8B2A7] uppercase font-medium">
+        <div className="hidden lg:flex absolute bottom-6 inset-x-0 flex-col items-center justify-center gap-1.5 pointer-events-none opacity-80">
+          <span className="text-[10px] tracking-widest text-white/70 uppercase font-bold font-cairo">
             مرر للاستكشاف
           </span>
           <div className="w-3.5 h-6 rounded-full border border-white/30 flex items-start justify-center p-1">
-            <div className="w-1 h-1.5 bg-[#C5A880] rounded-full animate-bounce" />
+            <div className="w-1 h-1.5 bg-[#FF551A] rounded-full animate-bounce" />
           </div>
         </div>
 

@@ -97,25 +97,25 @@ export const ProductDetails: React.FC = () => {
   );
 
   return (
-    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-20">
+    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-20 font-cairo">
       {/* Breadcrumb Navigation */}
-      <nav className="flex items-center gap-2 text-xs md:text-sm text-[#7A7265] border-b border-[#EAE6DD] pb-4 font-normal">
-        <Link to="/" className="hover:text-[#1A1A1A] transition-colors">
+      <nav className="flex items-center gap-2 text-xs md:text-sm text-[#757575] border-b border-[#EEEEEE] pb-4 font-normal">
+        <Link to="/" className="hover:text-[#1E1E1E] transition-colors">
           الرئيسية
         </Link>
         <span>/</span>
-        <Link to="/products" className="hover:text-[#1A1A1A] transition-colors">
+        <Link to="/products" className="hover:text-[#1E1E1E] transition-colors">
           المنتجات
         </Link>
         <span>/</span>
         <Link
           to={`/products?category=${encodeURIComponent(product.category)}`}
-          className="hover:text-[#1A1A1A] transition-colors"
+          className="hover:text-[#1E1E1E] transition-colors"
         >
           {product.category}
         </Link>
         <span>/</span>
-        <span className="text-[#1A1A1A] font-medium truncate max-w-xs">{product.name}</span>
+        <span className="text-[#1E1E1E] font-bold truncate max-w-xs">{product.name}</span>
       </nav>
 
       {/* Main PDP Grid: Sticky Gallery (Left) & Contiguous Purchase Module (Right) */}
@@ -123,7 +123,7 @@ export const ProductDetails: React.FC = () => {
         {/* Gallery Section */}
         <div className="lg:col-span-7 space-y-4">
           {/* Main Large Image */}
-          <div className="relative aspect-4/3 bg-[#F4F1EA] rounded-xs overflow-hidden border border-[#EBE7DF] group">
+          <div className="relative aspect-4/3 bg-[#F5F5F5] rounded-xs overflow-hidden border border-[#EEEEEE] group">
             <img
               src={activeImage}
               alt={product.name}
@@ -134,7 +134,7 @@ export const ProductDetails: React.FC = () => {
             {/* Lightbox button */}
             <button
               onClick={() => setLightboxOpen(true)}
-              className="absolute top-4 left-4 p-2.5 bg-white/90 hover:bg-white text-[#1A1A1A] rounded-xs shadow-xs transition-colors"
+              className="absolute top-4 left-4 p-2.5 bg-white/90 hover:bg-white text-[#1E1E1E] rounded-xs shadow-xs transition-colors"
               title="تكبير الصورة"
             >
               <Maximize2 className="w-4 h-4" />
@@ -147,7 +147,7 @@ export const ProductDetails: React.FC = () => {
                   onClick={() =>
                     setActiveImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
                   }
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-white/85 hover:bg-white text-[#1A1A1A] rounded-xs transition-colors shadow-xs"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-white/85 hover:bg-white text-[#1E1E1E] rounded-xs transition-colors shadow-xs"
                   aria-label="الصورة السابقة"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -156,7 +156,7 @@ export const ProductDetails: React.FC = () => {
                   onClick={() =>
                     setActiveImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
                   }
-                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-white/85 hover:bg-white text-[#1A1A1A] rounded-xs transition-colors shadow-xs"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-white/85 hover:bg-white text-[#1E1E1E] rounded-xs transition-colors shadow-xs"
                   aria-label="الصورة التالية"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -165,8 +165,9 @@ export const ProductDetails: React.FC = () => {
             )}
 
             {product.featured && (
-              <span className="absolute top-4 right-4 bg-[#1A1A1A]/85 backdrop-blur-xs text-[#FAF9F5] text-xs font-semibold px-3 py-1 rounded-xs">
-                تشكيلة مميزة
+              <span className="absolute top-4 right-4 bg-[#1E1E1E]/90 backdrop-blur-xs text-white text-xs font-bold px-3 py-1 rounded-xs flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF551A]"></span>
+                <span>تشكيلة مميزة</span>
               </span>
             )}
           </div>
@@ -180,8 +181,8 @@ export const ProductDetails: React.FC = () => {
                   onClick={() => setActiveImageIndex(idx)}
                   className={`relative w-20 h-20 shrink-0 rounded-xs overflow-hidden border-2 transition-all ${
                     activeImageIndex === idx
-                      ? 'border-[#1A1A1A] shadow-xs'
-                      : 'border-[#E2DDCF] opacity-70 hover:opacity-100'
+                      ? 'border-[#FF551A] shadow-xs'
+                      : 'border-[#E5E5E5] opacity-70 hover:opacity-100'
                   }`}
                 >
                   <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
@@ -194,19 +195,19 @@ export const ProductDetails: React.FC = () => {
         {/* Contiguous Purchase & Inquiry Module */}
         <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
           {/* Metadata & Title */}
-          <div className="space-y-2.5 border-b border-[#EAE6DD] pb-6">
-            <div className="flex items-center justify-between text-xs md:text-sm text-[#7A7265]">
-              <span className="font-semibold text-[#8C7355]">{product.category}</span>
+          <div className="space-y-2.5 border-b border-[#EEEEEE] pb-6">
+            <div className="flex items-center justify-between text-xs md:text-sm text-[#757575]">
+              <span className="font-bold text-[#FF551A]">{product.category}</span>
               <span
                 className={`font-semibold ${
-                  product.availability === 'متوفر' ? 'text-[#3E7B54]' : 'text-[#8A8175]'
+                  product.availability === 'متوفر' ? 'text-[#2E7D32]' : 'text-[#757575]'
                 }`}
               >
                 حالة التوفر: {product.availability}
               </span>
             </div>
 
-            <h1 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-[1.3] text-balance-ar">
+            <h1 className="font-cairo text-2xl sm:text-3xl md:text-4xl font-bold text-[#1E1E1E] leading-[1.3] text-balance-ar">
               {product.name}
             </h1>
 
@@ -214,13 +215,13 @@ export const ProductDetails: React.FC = () => {
             <div className="pt-2">
               {product.price ? (
                 <div className="space-y-0.5">
-                  <span className="text-2xl md:text-3xl font-bold text-[#1A1A1A] tabular-nums" dir="ltr">
+                  <span className="text-2xl md:text-3xl font-bold text-[#1E1E1E] tabular-nums" dir="ltr">
                     {product.price.toLocaleString('fr-DZ')} DA
                   </span>
-                  <p className="text-xs text-[#8C8275] font-normal">السعر شامل المعاينة بالمعرض</p>
+                  <p className="text-xs text-[#757575] font-normal">السعر شامل المعاينة بالمعرض</p>
                 </div>
               ) : (
-                <div className="inline-block py-2 px-3.5 bg-[#F0ECE4] text-[#1A1A1A] text-xs md:text-sm font-semibold rounded-xs">
+                <div className="inline-block py-2 px-3.5 bg-[#F5F5F5] text-[#1E1E1E] text-xs md:text-sm font-bold rounded-xs">
                   للاستفسار عن السعر والمقاسات
                 </div>
               )}
@@ -229,10 +230,10 @@ export const ProductDetails: React.FC = () => {
 
           {/* Description */}
           <div className="space-y-2.5">
-            <h3 className="font-serif-luxury text-base font-bold text-[#1A1A1A]">
+            <h3 className="font-cairo text-base font-bold text-[#1E1E1E]">
               تفاصيل القطعة
             </h3>
-            <p className="text-sm md:text-base text-[#4A463F] leading-relaxed md:leading-[1.8] font-normal whitespace-pre-line">
+            <p className="text-sm md:text-base text-[#4E4E4E] leading-relaxed md:leading-[1.8] font-normal whitespace-pre-line">
               {product.description ||
                 'صالون وتشكيلة فاخرة مجهزة بأعلى معايير الحرفية والمتانة لتناسب أرقى فضاءات المعيشة.'}
             </p>
@@ -242,10 +243,10 @@ export const ProductDetails: React.FC = () => {
           <div className="pt-4 space-y-3">
             <a
               href="tel:0560107745"
-              className="w-full flex items-center justify-center gap-2.5 py-4 bg-[#1A1A1A] hover:bg-[#33302B] text-white text-sm font-bold rounded-xs transition-colors shadow-xs"
+              className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-[#FF551A] hover:bg-[#E04812] text-white text-sm font-bold rounded-xs transition-colors shadow-xs"
               dir="ltr"
             >
-              <Phone className="w-4 h-4 text-[#C5A880]" />
+              <Phone className="w-4 h-4 text-white" />
               <span>اتصال مباشر: 0560 10 77 45</span>
             </a>
 
@@ -254,7 +255,7 @@ export const ProductDetails: React.FC = () => {
                 href={`https://wa.me/213560107745?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#147A3B] text-xs font-semibold rounded-xs border border-[#25D366]/30 transition-colors"
+                className="flex items-center justify-center gap-2 py-3 bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#147A3B] text-xs font-bold rounded-xs border border-[#25D366]/30 transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>واتساب المعرض</span>
@@ -262,7 +263,7 @@ export const ProductDetails: React.FC = () => {
 
               <button
                 onClick={handleShare}
-                className="flex items-center justify-center gap-2 py-3 bg-[#EFECE4] hover:bg-[#E5DFD3] text-[#1A1A1A] text-xs font-semibold rounded-xs border border-[#DDD6C8] transition-colors"
+                className="flex items-center justify-center gap-2 py-3 bg-[#F5F5F5] hover:bg-[#EAEAEA] text-[#1E1E1E] text-xs font-bold rounded-xs border border-[#E5E5E5] transition-colors"
               >
                 {copiedLink ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
                 <span>{copiedLink ? 'تم نسخ الرابط' : 'مشاركة القطعة'}</span>
@@ -271,9 +272,9 @@ export const ProductDetails: React.FC = () => {
           </div>
 
           {/* Showroom Trust Callout */}
-          <div className="bg-[#FAF7F0] border border-[#E8E1D3] p-4 rounded-xs space-y-2 text-xs text-[#6B6458]">
-            <div className="flex items-center gap-2 text-[#1A1A1A] font-semibold">
-              <MapPin className="w-4 h-4 text-[#8C7355]" />
+          <div className="bg-[#FFF9F6] border border-[#FFDDD2] p-4 rounded-xs space-y-2 text-xs text-[#555555]">
+            <div className="flex items-center gap-2 text-[#1E1E1E] font-bold">
+              <MapPin className="w-4 h-4 text-[#FF551A]" />
               <span>معاينة حية في بورمل، جيجل</span>
             </div>
             <p className="leading-relaxed">
@@ -284,7 +285,7 @@ export const ProductDetails: React.FC = () => {
                 href="https://maps.app.goo.gl/XYLZfTao58Y5pydc6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#8C7355] hover:underline font-semibold"
+                className="text-[#FF551A] hover:underline font-bold"
               >
                 عرض الموقع على خرائط Google ←
               </a>
@@ -296,7 +297,7 @@ export const ProductDetails: React.FC = () => {
       {/* Lightbox Modal */}
       {lightboxOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 font-cairo"
           onClick={() => setLightboxOpen(false)}
         >
           <button
@@ -316,14 +317,14 @@ export const ProductDetails: React.FC = () => {
 
       {/* Related Products Section */}
       {relatedProducts.length > 0 && (
-        <section className="pt-16 border-t border-[#EAE6DD] space-y-8">
+        <section className="pt-16 border-t border-[#EEEEEE] space-y-8 font-cairo">
           <div className="flex items-center justify-between">
-            <h2 className="font-serif-luxury text-2xl md:text-3xl font-bold text-[#1A1A1A]">
+            <h2 className="font-cairo text-2xl md:text-3xl font-bold text-[#1E1E1E]">
               قطع أخرى من تشكيلة {product.category}
             </h2>
             <Link
               to={`/products?category=${encodeURIComponent(product.category)}`}
-              className="text-xs font-semibold text-[#8C7355] hover:underline"
+              className="text-xs font-bold text-[#FF551A] hover:underline"
             >
               عرض الكل ←
             </Link>

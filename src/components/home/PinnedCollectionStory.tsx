@@ -145,30 +145,30 @@ export const PinnedCollectionStory: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#FAF9F5] text-[#1A1A1A] border-b border-[#E8E2D6] z-10"
+      className="relative w-full bg-white text-[#1E1E1E] border-b border-[#EEEEEE] z-10 font-cairo"
     >
       {/* DESKTOP VIEWPORT: Sticky Scrollytelling Mode (md:block) */}
       <div className="hidden md:block relative h-[200vh]">
         <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center py-6 lg:py-10">
           <div className="max-w-7xl mx-auto px-6 w-full">
             {/* Top Annotation Bar */}
-            <div className="pb-3 md:pb-4 border-b border-[#EAE6DD] flex items-center justify-between">
+            <div className="pb-3 md:pb-4 border-b border-[#EEEEEE] flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <Layers className="w-4 h-4 text-[#8C7355]" />
-                <span className="text-xs font-semibold text-[#8C7355]">
+                <Layers className="w-4 h-4 text-[#FF551A]" />
+                <span className="text-xs font-bold text-[#FF551A]">
                   المجموعات الأساسية المعروضة
                 </span>
               </div>
 
               {/* Progress Indicator */}
               <div className="flex items-center gap-3">
-                <span className="font-serif-luxury text-base font-bold text-[#1A1A1A] tabular-nums" dir="ltr">
+                <span className="font-cairo text-base font-bold text-[#1E1E1E] tabular-nums" dir="ltr">
                   <span ref={indexNumRef}>01</span> / 02
                 </span>
-                <div className="w-20 h-0.5 bg-[#E2DDCF] relative overflow-hidden rounded-full">
+                <div className="w-20 h-1 bg-[#EAEAEA] relative overflow-hidden rounded-full">
                   <div
                     ref={progressLineRef}
-                    className="absolute top-0 right-0 h-full w-1/2 bg-[#1A1A1A] transition-all"
+                    className="absolute top-0 right-0 h-full w-1/2 bg-[#FF551A] transition-all rounded-full"
                   />
                 </div>
               </div>
@@ -183,24 +183,24 @@ export const PinnedCollectionStory: React.FC = () => {
                   ref={textBlock1Ref}
                   className="space-y-4 w-full pointer-events-auto will-change-transform"
                 >
-                  <span className="text-xs font-bold text-[#8C7355] block">
+                  <span className="text-xs font-bold text-[#FF551A] block">
                     01 · تشكيلة الصالونات
                   </span>
-                  <h2 className="font-serif-luxury text-2xl lg:text-3xl xl:text-4xl font-bold text-[#1A1A1A] leading-[1.3] text-balance-ar">
+                  <h2 className="font-cairo text-2xl lg:text-3xl xl:text-4xl font-bold text-[#1E1E1E] leading-[1.3] text-balance-ar">
                     صالونات معاصرة بتشطيبات راقية
                   </h2>
-                  <p className="text-sm lg:text-base text-[#4A453D] leading-relaxed font-normal">
+                  <p className="text-sm lg:text-base text-[#4E4E4E] leading-relaxed font-normal">
                     تصاميم مصممة لتكون القلب النابض لغرفة المعيشة. تتميز بهياكل صلبة وأقمشة مريحة تم اختيارها بعناية لضمان ديمومة الاستخدام اليومي.
                   </p>
                   <div className="pt-1">
-                    <span className="text-xs font-medium text-[#2E2A24] bg-[#EFECE4] px-3.5 py-1.5 rounded-xs inline-block">
+                    <span className="text-xs font-semibold text-[#1E1E1E] bg-[#F5F5F5] px-3.5 py-1.5 rounded-xs inline-block border border-[#EAEAEA]">
                       الموديلات: Salon 6P Livinda · Salon Pilot Plus
                     </span>
                   </div>
                   <div className="pt-2">
                     <Link
                       to="/salons"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#1A1A1A] hover:bg-[#33302B] text-white text-xs md:text-sm font-semibold rounded-xs transition-colors group"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E1E1E] hover:bg-[#FF551A] text-white text-xs md:text-sm font-bold rounded-xs transition-colors group shadow-xs"
                     >
                       <span>استكشف قسم الصالونات</span>
                       <ArrowUpLeft className="w-4 h-4 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -213,24 +213,24 @@ export const PinnedCollectionStory: React.FC = () => {
                   ref={textBlock2Ref}
                   className="space-y-4 w-full absolute inset-0 flex flex-col justify-center opacity-0 pointer-events-none will-change-transform"
                 >
-                  <span className="text-xs font-bold text-[#8C7355] block">
+                  <span className="text-xs font-bold text-[#FF551A] block">
                     02 · أجنحة غرف النوم
                   </span>
-                  <h2 className="font-serif-luxury text-2xl lg:text-3xl xl:text-4xl font-bold text-[#1A1A1A] leading-[1.3] text-balance-ar">
+                  <h2 className="font-cairo text-2xl lg:text-3xl xl:text-4xl font-bold text-[#1E1E1E] leading-[1.3] text-balance-ar">
                     أجنحة النوم الهادئة والماستر
                   </h2>
-                  <p className="text-sm lg:text-base text-[#4A453D] leading-relaxed font-normal">
+                  <p className="text-sm lg:text-base text-[#4E4E4E] leading-relaxed font-normal">
                     مساحتكم الخاصة مصممة لتفيض بالسكينة والتناغم. أسِرّة مريحة مع تفاصيل خشبية متقونة وخزانات رحبة تواكب ذوق أصحاب البيوت الراقية.
                   </p>
                   <div className="pt-1">
-                    <span className="text-xs font-medium text-[#2E2A24] bg-[#EFECE4] px-3.5 py-1.5 rounded-xs inline-block">
+                    <span className="text-xs font-semibold text-[#1E1E1E] bg-[#F5F5F5] px-3.5 py-1.5 rounded-xs inline-block border border-[#EAEAEA]">
                       خامات طبيعية · تشطيبات متقنة · تصميم متناسق
                     </span>
                   </div>
                   <div className="pt-2">
                     <Link
                       to="/bedrooms"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#1A1A1A] hover:bg-[#33302B] text-white text-xs md:text-sm font-semibold rounded-xs transition-colors group"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E1E1E] hover:bg-[#FF551A] text-white text-xs md:text-sm font-bold rounded-xs transition-colors group shadow-xs"
                     >
                       <span>استكشف قسم غرف النوم</span>
                       <ArrowUpLeft className="w-4 h-4 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -241,7 +241,7 @@ export const PinnedCollectionStory: React.FC = () => {
 
               {/* Anchored Visual Stage (col-span-7) */}
               <div className="col-span-7">
-                <div className="relative aspect-4/3 max-h-[58vh] w-full rounded-xs overflow-hidden shadow-xl border border-[#DDD6C8] bg-[#EFECE4]">
+                <div className="relative aspect-4/3 max-h-[58vh] w-full rounded-xs overflow-hidden shadow-lg border border-[#E5E5E5] bg-[#F5F5F5]">
                   {/* Layer 1: Salons Image */}
                   <div
                     ref={img1Ref}
@@ -255,12 +255,12 @@ export const PinnedCollectionStory: React.FC = () => {
                     />
                     <div
                       ref={badge1Ref}
-                      className="absolute bottom-4 right-4 bg-[#141311]/85 backdrop-blur-md text-white px-3.5 py-2 rounded-xs max-w-xs border border-white/10"
+                      className="absolute bottom-4 right-4 bg-[#1E1E1E]/90 backdrop-blur-md text-white px-3.5 py-2 rounded-xs max-w-xs border border-white/10"
                     >
-                      <span className="text-[10px] text-[#C5A880] font-semibold tracking-wider uppercase block">
+                      <span className="text-[10px] text-[#FF551A] font-bold tracking-wider uppercase block">
                         صالون معروض
                       </span>
-                      <h4 className="font-serif-luxury text-sm font-bold">Salon 6P Livinda</h4>
+                      <h4 className="font-cairo text-sm font-bold">Salon 6P Livinda</h4>
                     </div>
                   </div>
 
@@ -277,12 +277,12 @@ export const PinnedCollectionStory: React.FC = () => {
                     />
                     <div
                       ref={badge2Ref}
-                      className="absolute bottom-4 right-4 bg-[#141311]/85 backdrop-blur-md text-white px-3.5 py-2 rounded-xs max-w-xs border border-white/10 opacity-0"
+                      className="absolute bottom-4 right-4 bg-[#1E1E1E]/90 backdrop-blur-md text-white px-3.5 py-2 rounded-xs max-w-xs border border-white/10 opacity-0"
                     >
-                      <span className="text-[10px] text-[#C5A880] font-semibold tracking-wider uppercase block">
+                      <span className="text-[10px] text-[#FF551A] font-bold tracking-wider uppercase block">
                         غرفة نوم ماستر
                       </span>
-                      <h4 className="font-serif-luxury text-sm font-bold">غرفة نوم ماستر فاخرة</h4>
+                      <h4 className="font-cairo text-sm font-bold">غرفة نوم ماستر فاخرة</h4>
                     </div>
                   </div>
                 </div>
@@ -296,35 +296,35 @@ export const PinnedCollectionStory: React.FC = () => {
       <div className="md:hidden px-6 py-14 space-y-16">
         {/* Story 01 Mobile Card */}
         <div className="space-y-5">
-          <div className="flex items-center justify-between border-b border-[#EAE6DD] pb-3">
-            <span className="text-xs font-bold text-[#8C7355]">
+          <div className="flex items-center justify-between border-b border-[#EEEEEE] pb-3">
+            <span className="text-xs font-bold text-[#FF551A]">
               01 · تشكيلة الصالونات
             </span>
-            <span className="font-serif-luxury text-sm font-bold text-[#1A1A1A]">01 / 02</span>
+            <span className="font-cairo text-sm font-bold text-[#1E1E1E]">01 / 02</span>
           </div>
 
-          <div className="aspect-4/3 w-full rounded-xs overflow-hidden border border-[#DDD6C8] shadow-md relative">
+          <div className="aspect-4/3 w-full rounded-xs overflow-hidden border border-[#E5E5E5] shadow-md relative">
             <img
               src="/src/assets/images/salon_livinda_showcase_1791306326700.jpg"
               alt="Salon Livinda"
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute bottom-3 right-3 bg-[#141311]/85 text-white px-3.5 py-1.5 rounded-xs text-xs font-semibold">
+            <div className="absolute bottom-3 right-3 bg-[#1E1E1E]/90 text-white px-3.5 py-1.5 rounded-xs text-xs font-bold">
               Salon 6P Livinda
             </div>
           </div>
 
           <div className="space-y-3">
-            <h2 className="font-serif-luxury text-2xl font-bold text-[#1A1A1A] leading-[1.3]">
+            <h2 className="font-cairo text-2xl font-bold text-[#1E1E1E] leading-[1.3]">
               صالونات معاصرة بتشطيبات راقية
             </h2>
-            <p className="text-sm text-[#4A453D] leading-relaxed font-normal">
+            <p className="text-sm text-[#4E4E4E] leading-relaxed font-normal">
               تصاميم مصممة لتكون القلب النابض لغرفة المعيشة بأقمشة مريحة وهياكل متينة تدوم لأعوام.
             </p>
             <Link
               to="/salons"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1A1A1A] text-white text-xs font-semibold rounded-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1E1E1E] hover:bg-[#FF551A] text-white text-xs font-bold rounded-xs transition-colors"
             >
               <span>استكشف الصالونات</span>
               <ArrowUpLeft className="w-4 h-4" />
@@ -333,36 +333,36 @@ export const PinnedCollectionStory: React.FC = () => {
         </div>
 
         {/* Story 02 Mobile Card */}
-        <div className="space-y-5 pt-6 border-t border-[#EAE6DD]">
-          <div className="flex items-center justify-between border-b border-[#EAE6DD] pb-3">
-            <span className="text-xs font-bold text-[#8C7355]">
+        <div className="space-y-5 pt-6 border-t border-[#EEEEEE]">
+          <div className="flex items-center justify-between border-b border-[#EEEEEE] pb-3">
+            <span className="text-xs font-bold text-[#FF551A]">
               02 · أجنحة غرف النوم
             </span>
-            <span className="font-serif-luxury text-sm font-bold text-[#1A1A1A]">02 / 02</span>
+            <span className="font-cairo text-sm font-bold text-[#1E1E1E]">02 / 02</span>
           </div>
 
-          <div className="aspect-4/3 w-full rounded-xs overflow-hidden border border-[#DDD6C8] shadow-md relative">
+          <div className="aspect-4/3 w-full rounded-xs overflow-hidden border border-[#E5E5E5] shadow-md relative">
             <img
               src="/src/assets/images/bedroom_luxury_suite_1791306350443.jpg"
               alt="غرفة نوم ماستر"
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute bottom-3 right-3 bg-[#141311]/85 text-white px-3.5 py-1.5 rounded-xs text-xs font-semibold">
+            <div className="absolute bottom-3 right-3 bg-[#1E1E1E]/90 text-white px-3.5 py-1.5 rounded-xs text-xs font-bold">
               غرفة نوم ماستر فاخرة
             </div>
           </div>
 
           <div className="space-y-3">
-            <h2 className="font-serif-luxury text-2xl font-bold text-[#1A1A1A] leading-[1.3]">
+            <h2 className="font-cairo text-2xl font-bold text-[#1E1E1E] leading-[1.3]">
               أجنحة النوم الهادئة والماستر
             </h2>
-            <p className="text-sm text-[#4A453D] leading-relaxed font-normal">
+            <p className="text-sm text-[#4E4E4E] leading-relaxed font-normal">
               مساحتكم الخاصة مصممة لتفيض بالسكينة والتناغم مع أسِرّة وخزانات متناسقة وألوان مهدئة.
             </p>
             <Link
               to="/bedrooms"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1A1A1A] text-white text-xs font-semibold rounded-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1E1E1E] hover:bg-[#FF551A] text-white text-xs font-bold rounded-xs transition-colors"
             >
               <span>استكشف غرف النوم</span>
               <ArrowUpLeft className="w-4 h-4" />

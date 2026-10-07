@@ -113,16 +113,16 @@ export const EditorialGallery: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-auto md:h-[220vh] bg-[#FAF9F5] text-[#1A1A1A] border-b border-[#E8E2D6]"
+      className="relative w-full h-auto md:h-[220vh] bg-white text-[#1E1E1E] border-b border-[#EEEEEE] font-cairo"
     >
       {/* Sticky Viewport Container on Desktop (Zero DOM manipulation) */}
       <div className="md:sticky md:top-0 md:h-screen w-full overflow-hidden flex flex-col justify-center py-10 md:py-0">
         {/* Editorial Header */}
         <div className="max-w-7xl mx-auto px-6 w-full pt-4 md:pt-8 pb-3 md:pb-4">
-          <span className="text-xs font-semibold text-[#8C7355] block mb-1.5">
+          <span className="text-xs font-bold text-[#FF551A] block mb-1.5">
             معرض الصور البصري
           </span>
-          <h2 className="font-serif-luxury text-2xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] leading-[1.3] text-balance-ar">
+          <h2 className="font-cairo text-2xl md:text-4xl lg:text-5xl font-bold text-[#1E1E1E] leading-[1.3] text-balance-ar">
             مشاهد مختارة من قلب المعرض
           </h2>
         </div>
@@ -139,8 +139,8 @@ export const EditorialGallery: React.FC = () => {
                 ref={item.ref}
                 className={`${item.aspect} shrink-0 group relative overflow-hidden rounded-xs border transition-all duration-500 ${
                   item.dominant
-                    ? 'border-[#C5A880] shadow-2xl scale-100 md:scale-105'
-                    : 'border-[#DDD6C8] shadow-md opacity-90 hover:opacity-100'
+                    ? 'border-[#FF551A] shadow-2xl scale-100 md:scale-105'
+                    : 'border-[#E5E5E5] shadow-md opacity-90 hover:opacity-100'
                 }`}
               >
                 <img
@@ -152,10 +152,10 @@ export const EditorialGallery: React.FC = () => {
 
                 {/* Subdued Scrim & Minimal Text */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
-                  <span className="text-xs text-[#C5A880] font-medium block">
+                  <span className="text-xs text-[#FF551A] font-bold block">
                     {item.subtitle}
                   </span>
-                  <h3 className="font-serif-luxury text-lg md:text-xl font-bold mt-1 line-clamp-1 leading-[1.35]">
+                  <h3 className="font-cairo text-lg md:text-xl font-bold mt-1 line-clamp-1 leading-[1.35]">
                     {item.title}
                   </h3>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, ArrowUpLeft } from 'lucide-react';
+import { TrustLogo } from './TrustLogo';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,59 +64,42 @@ export const Navbar: React.FC = () => {
         isTransparent
           ? 'bg-transparent text-white'
           : isDark
-          ? 'bg-[#12110F]/90 backdrop-blur-md shadow-md border-b border-white/10 text-white'
-          : 'bg-[#FAF9F5]/90 backdrop-blur-md shadow-xs border-b border-[#E8E2D6] text-[#1A1A1A]'
+          ? 'bg-[#1E1E1E]/95 backdrop-blur-md shadow-md border-b border-white/10 text-white'
+          : 'bg-white/95 backdrop-blur-md shadow-xs border-b border-[#EAEAEA] text-[#1E1E1E]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Zone 1: Single text element wordmark */}
+        {/* Zone 1: Distinctive Square-Kufi Logo Mark & Wordmark */}
         <Link
           to="/"
-          className="group flex flex-col focus-visible:outline-hidden"
+          className="group focus-visible:outline-hidden"
           aria-label="أثاث الثقة جيجل 18 - الصفحة الرئيسية"
         >
-          <span
-            className={`font-serif-luxury text-2xl md:text-3xl font-bold tracking-tight transition-colors ${
-              isDark
-                ? 'text-white group-hover:text-[#C5A880]'
-                : 'text-[#1A1A1A] group-hover:text-[#8C7355]'
-            }`}
-          >
-            أثاث الثقة
-          </span>
-          <span
-            className={`text-[11px] tracking-widest font-semibold transition-colors ${
-              isDark ? 'text-[#C5A880]' : 'text-[#8C7355]'
-            }`}
-          >
-            JIJEL 18
-          </span>
+          <TrustLogo variant={isDark ? 'dark' : 'light'} size="md" />
         </Link>
 
-        {/* Zone 2: Clean text navigation links */}
-        <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+        {/* Zone 2: Clean Cairo navigation links */}
+        <nav className="hidden lg:flex items-center gap-7 text-[15px] font-medium font-cairo">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path;
             return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative py-1 transition-colors ${
+                className={`relative py-1.5 transition-colors ${
                   isDark
                     ? isActive
                       ? 'text-white font-bold'
-                      : 'text-[#D8D4CD] hover:text-white'
+                      : 'text-white/80 hover:text-white'
                     : isActive
-                    ? 'text-[#1A1A1A] font-bold'
-                    : 'text-[#5C564E] hover:text-[#1A1A1A]'
+                    ? 'text-[#FF551A] font-bold'
+                    : 'text-[#4A4A4A] hover:text-[#1E1E1E]'
                 }`}
               >
                 {link.label}
                 {isActive && (
                   <span
-                    className={`absolute bottom-0 inset-x-0 h-0.5 rounded-full ${
-                      isDark ? 'bg-[#C5A880]' : 'bg-[#8C7355]'
-                    }`}
+                    className="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-[#FF551A]"
                   />
                 )}
               </Link>
@@ -124,26 +108,22 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Zone 3: Primary actions */}
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-3">
           <a
             href="tel:0560107745"
-            className={`flex items-center gap-2 px-4 py-2.5 text-xs font-semibold rounded-xs transition-colors whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xs transition-colors whitespace-nowrap font-cairo ${
               isDark
                 ? 'bg-white/10 hover:bg-white/20 text-white border border-white/20'
-                : 'bg-[#EFECE4] hover:bg-[#E5E0D5] text-[#1A1A1A] border border-[#DDD6C8]'
+                : 'bg-[#F8F8F8] hover:bg-[#EFEFEF] text-[#1E1E1E] border border-[#E5E5E5]'
             }`}
             dir="ltr"
           >
-            <Phone className={`w-3.5 h-3.5 ${isDark ? 'text-[#C5A880]' : 'text-[#8C7355]'}`} />
+            <Phone className="w-3.5 h-3.5 text-[#FF551A]" />
             <span className="tracking-wide">0560 10 77 45</span>
           </a>
           <Link
             to="/products"
-            className={`flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold rounded-xs transition-colors whitespace-nowrap ${
-              isDark
-                ? 'bg-[#C5A880] hover:bg-[#D4BC98] text-[#1A1A1A]'
-                : 'bg-[#1A1A1A] hover:bg-[#33302B] text-white'
-            }`}
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-xs transition-all whitespace-nowrap bg-[#FF551A] hover:bg-[#E04812] text-white shadow-xs"
           >
             <span>التشكيلة</span>
             <ArrowUpLeft className="w-3.5 h-3.5" />
@@ -155,16 +135,16 @@ export const Navbar: React.FC = () => {
           <a
             href="tel:0560107745"
             className={`p-2 rounded-xs ${
-              isDark ? 'bg-white/10 text-white' : 'bg-[#EFECE4] text-[#1A1A1A]'
+              isDark ? 'bg-white/10 text-white' : 'bg-[#F8F8F8] text-[#1E1E1E]'
             }`}
             aria-label="الاتصال بالمعرض"
           >
-            <Phone className={`w-4 h-4 ${isDark ? 'text-[#C5A880]' : 'text-[#8C7355]'}`} />
+            <Phone className="w-4 h-4 text-[#FF551A]" />
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`p-2 transition-colors ${
-              isDark ? 'text-white hover:text-[#C5A880]' : 'text-[#1A1A1A] hover:text-[#8C7355]'
+              isDark ? 'text-white hover:text-[#FF551A]' : 'text-[#1E1E1E] hover:text-[#FF551A]'
             }`}
             aria-label={mobileMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
           >
@@ -175,14 +155,14 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#FAF9F5] border-b border-[#E8E2D6] px-6 py-6 shadow-2xl animate-in slide-in-from-top-2 duration-200 text-[#1A1A1A]">
-          <nav className="flex flex-col gap-4 text-base font-medium">
+        <div className="sm:hidden bg-white border-b border-[#EAEAEA] px-6 py-6 shadow-2xl animate-in slide-in-from-top-2 duration-200 text-[#1E1E1E]">
+          <nav className="flex flex-col gap-3 font-cairo text-base font-medium">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`py-2 border-b border-[#EAE6DD] flex items-center justify-between ${
-                  location.pathname === link.path ? 'text-[#8C7355] font-bold' : 'text-[#2D2A26]'
+                className={`py-2.5 border-b border-[#F0F0F0] flex items-center justify-between ${
+                  location.pathname === link.path ? 'text-[#FF551A] font-bold' : 'text-[#2B2B2B]'
                 }`}
               >
                 <span>{link.label}</span>
@@ -192,17 +172,17 @@ export const Navbar: React.FC = () => {
             <div className="pt-4 flex flex-col gap-3">
               <a
                 href="tel:0560107745"
-                className="flex items-center justify-center gap-2 py-3 bg-[#EFECE4] text-[#1A1A1A] text-sm font-semibold rounded-xs border border-[#DDD6C8]"
+                className="flex items-center justify-center gap-2 py-3 bg-[#F8F8F8] text-[#1E1E1E] text-sm font-semibold rounded-xs border border-[#E5E5E5]"
                 dir="ltr"
               >
-                <Phone className="w-4 h-4 text-[#8C7355]" />
+                <Phone className="w-4 h-4 text-[#FF551A]" />
                 <span>0560 10 77 45</span>
               </a>
               <Link
-                to="/contact"
-                className="flex items-center justify-center py-3 bg-[#1A1A1A] text-white text-sm font-semibold rounded-xs"
+                to="/products"
+                className="flex items-center justify-center py-3 bg-[#FF551A] hover:bg-[#E04812] text-white text-sm font-bold rounded-xs transition-colors"
               >
-                تواصل مع إدارة المعرض
+                تصفح تشكيلة الأثاث
               </Link>
             </div>
           </nav>
