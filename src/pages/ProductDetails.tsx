@@ -218,7 +218,7 @@ export const ProductDetails: React.FC = () => {
                   <span className="text-2xl md:text-3xl font-bold text-[#1E1E1E] tabular-nums" dir="ltr">
                     {product.price.toLocaleString('fr-DZ')} DA
                   </span>
-                  <p className="text-xs text-[#757575] font-normal">السعر شامل المعاينة بالمعرض</p>
+                  <p className="text-xs text-[#757575] font-normal">السعر شامل المعاينة بفروع المتجر</p>
                 </div>
               ) : (
                 <div className="inline-block py-2 px-3.5 bg-[#F5F5F5] text-[#1E1E1E] text-xs md:text-sm font-bold rounded-xs">
@@ -258,7 +258,7 @@ export const ProductDetails: React.FC = () => {
                 className="flex items-center justify-center gap-2 py-3 bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#147A3B] text-xs font-bold rounded-xs border border-[#25D366]/30 transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>واتساب المعرض</span>
+                <span>واتساب المتجر</span>
               </a>
 
               <button
@@ -275,19 +275,17 @@ export const ProductDetails: React.FC = () => {
           <div className="bg-[#FFF9F6] border border-[#FFDDD2] p-4 rounded-xs space-y-2 text-xs text-[#555555]">
             <div className="flex items-center gap-2 text-[#1E1E1E] font-bold">
               <MapPin className="w-4 h-4 text-[#FF551A]" />
-              <span>معاينة حية في بورمل، جيجل</span>
+              <span>معاينة حية في فروع متجرنا بجيجل (3 فروع)</span>
             </div>
             <p className="leading-relaxed">
-              المعروضات متوفرة في صالات عرض المعرض الداخلي مع طابق تحت الأرض للاطلاع على كافة التفاصيل.
+              المعروضات متوفرة في صالات العرض التابعة لفروعنا بجيجل (وسط المدينة، بورمل، وحي الفرسان) للاطلاع على أدق التفاصيل وتجربة الراحة الحقيقية.
             </p>
             <div className="pt-1 flex items-center gap-2">
               <a
-                href="https://maps.app.goo.gl/XYLZfTao58Y5pydc6"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#branches"
                 className="text-[#FF551A] hover:underline font-bold"
               >
-                عرض الموقع على خرائط Google ←
+                استعراض فروعنا الثلاثة على الخريطة ←
               </a>
             </div>
           </div>

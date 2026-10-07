@@ -7,6 +7,32 @@
     --color-primary: #1E1E1E;
     --color-accent: #FF551A;
     --color-bg: #FFFFFF;
+
+    /* =========================================================================
+       SPACING SCALE SYSTEM (Design with Restraint)
+       A harmonious, mathematical spacing scale providing deliberate negative
+       space, uncrowded compositions, and breathable editorial rhythm.
+       ========================================================================= */
+    --space-3xs: 0.25rem;   /* 4px  - Micro separators & borders */
+    --space-2xs: 0.5rem;    /* 8px  - Tight element offsets */
+    --space-xs:  0.75rem;   /* 12px - Metadata gaps & icon offsets */
+    --space-sm:  1rem;      /* 16px - Base compact padding */
+    --space-md:  1.5rem;    /* 24px - Standard internal card & item padding */
+    --space-lg:  2rem;      /* 32px - Module spacing & comfortable inset */
+    --space-xl:  3rem;      /* 48px - Generous block padding */
+    --space-2xl: 4rem;      /* 64px - Section sub-blocks & headline rhythm */
+    --space-3xl: 6rem;      /* 96px - Generous section intervals */
+    --space-4xl: 8rem;      /* 128px - Editorial viewport breathing room */
+    --space-5xl: 11rem;     /* 176px - Cinematic transition buffers */
+
+    /* Fluid Layout Spacing Tokens supporting "Design with Restraint" */
+    --section-spacing-y: clamp(5.5rem, 9vw, 10rem);
+    --section-spacing-y-dense: clamp(3.5rem, 6vw, 6.5rem);
+    --container-padding-x: clamp(1.5rem, 5vw, 4.5rem);
+    --gutter-editorial: clamp(2rem, 4vw, 4rem);
+    --gutter-relaxed: clamp(2.5rem, 5vw, 5.5rem);
+    --card-padding-restrained: clamp(1.75rem, 3vw, 3rem);
+    --headline-margin-bottom: clamp(1.25rem, 2.5vw, 2.25rem);
   }
 
   html {
@@ -28,11 +54,64 @@
     min-height: 100vh;
   }
 
-  /* Headings typography with Cairo */
+  /* Headings typography with Cairo and consistent restrained baseline margin */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-cairo);
     letter-spacing: normal;
   }
+}
+
+/* =========================================================================
+   GENEROUS RESTRAINT UTILITIES & SPACING CLASSES
+   Enforces unhurried, intentional negative space across views
+   ========================================================================= */
+
+/* Generous Section Paddings */
+.py-section-restraint {
+  padding-top: var(--section-spacing-y);
+  padding-bottom: var(--section-spacing-y);
+}
+
+.py-section-dense {
+  padding-top: var(--section-spacing-y-dense);
+  padding-bottom: var(--section-spacing-y-dense);
+}
+
+.my-section-restraint {
+  margin-top: var(--section-spacing-y);
+  margin-bottom: var(--section-spacing-y);
+}
+
+/* Fluid Horizontal Container Padding */
+.px-container-restraint {
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+/* High-restraint editorial layout wrapper */
+.container-restrained {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+/* Breathable Stack & Grid Gaps */
+.gap-restraint-editorial {
+  gap: var(--gutter-editorial);
+}
+
+.gap-restraint-relaxed {
+  gap: var(--gutter-relaxed);
+}
+
+.p-restraint-card {
+  padding: var(--card-padding-restrained);
+}
+
+.mb-headline-restraint {
+  margin-bottom: var(--headline-margin-bottom);
 }
 
 .no-scrollbar::-webkit-scrollbar {

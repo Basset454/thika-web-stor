@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Compass, ArrowUpLeft, ShieldCheck, MapPin } from 'lucide-react';
+import { Phone, Compass, ArrowUpLeft, ShieldCheck, MapPin, Facebook, ExternalLink } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -60,7 +60,7 @@ export const EditorialClosing: React.FC = () => {
       {/* Editorial Philosophy Statement */}
       <div className="max-w-4xl mx-auto text-center space-y-6">
         <span className="text-xs font-bold text-[#FF551A] block">
-          فلسفة المعرض
+          فلسفة متجرنا
         </span>
         <h2
           ref={quoteRef}
@@ -69,7 +69,7 @@ export const EditorialClosing: React.FC = () => {
           "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة."
         </h2>
         <p className="text-sm md:text-base text-[#4E4E4E] max-w-2xl mx-auto leading-relaxed md:leading-[1.8] font-normal">
-          معرض متكامل في بورمل بولاية جيجل، يجمع بين الجودة العالية في التصنيع وحسن الاستقبال لمرافقتكم في تأثيث منازلكم بأرقى التشكيلات.
+          أحد أكبر وأرقى متاجر الأثاث في ولاية جيجل بـ 3 فروع متكاملة في مناطق مختلفة، نجمع بين الجودة العالية في التصنيع، التصاميم المعمارية العصرية، والمصداقية التامة في مرافقتكم لتأثيث بيوتكم.
         </p>
       </div>
 
@@ -79,21 +79,29 @@ export const EditorialClosing: React.FC = () => {
           <div className="w-10 h-10 rounded-xs bg-[#FFF5F2] flex items-center justify-center text-[#FF551A] border border-[#FFE4DC]">
             <MapPin className="w-5 h-5" />
           </div>
-          <h3 className="font-cairo text-xl font-bold text-[#1E1E1E] leading-[1.35]">معرض بورمل جيجل</h3>
+          <h3 className="font-cairo text-xl font-bold text-[#1E1E1E] leading-[1.35]">3 فروع متكاملة بجيجل</h3>
           <p className="text-sm text-[#4E4E4E] leading-relaxed font-normal">
-            مساحات عرض متعددة تشمل طابقاً تحت الأرض مجهزاً بكافة موديلات الصالونات وغرف النوم المعروضة.
+            صالات عرض رحبة تتوزع بين وسط مدينة جيجل، بورمل، وحي الفرسان، مع طوابق متعددة للمعاينة الحية والمباشرة.
           </p>
         </div>
 
-        <div className="bg-white p-8 rounded-xs border border-[#EEEEEE] hover:border-[#FF551A]/30 transition-colors space-y-3 shadow-xs">
-          <div className="w-10 h-10 rounded-xs bg-[#FFF5F2] flex items-center justify-center text-[#FF551A] border border-[#FFE4DC]">
-            <ShieldCheck className="w-5 h-5" />
+        <a
+          href="https://web.facebook.com/profile.php?id=61563792971318&locale=ar_AR"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block bg-white p-8 rounded-xs border border-[#EEEEEE] hover:border-[#FF551A]/40 transition-colors space-y-3 shadow-xs"
+        >
+          <div className="flex items-center justify-between">
+            <div className="w-10 h-10 rounded-xs bg-[#FFF5F2] flex items-center justify-center text-[#FF551A] border border-[#FFE4DC]">
+              <Facebook className="w-5 h-5" />
+            </div>
+            <ExternalLink className="w-4 h-4 text-[#999999] group-hover:text-[#FF551A] transition-colors" />
           </div>
-          <h3 className="font-cairo text-xl font-bold text-[#1E1E1E] leading-[1.35]">مجتمع من 73,000+</h3>
+          <h3 className="font-cairo text-xl font-bold text-[#1E1E1E] group-hover:text-[#FF551A] transition-colors leading-[1.35]">مجتمع من 73,000+</h3>
           <p className="text-sm text-[#4E4E4E] leading-relaxed font-normal">
-            قاعدة متابعين حقيقية يثقون في جودة منتجاتنا وأسعارنا وخدماتنا الموجهة للعائلات الجزائرية.
+            قاعدة متابعين حقيقية ووفية على صفحتنا الرسمية في فيسبوك يشاركوننا شغف الأثاث الفاخر والتصميم العصري.
           </p>
-        </div>
+        </a>
 
         <div className="bg-white p-8 rounded-xs border border-[#EEEEEE] hover:border-[#FF551A]/30 transition-colors space-y-3 shadow-xs">
           <div className="w-10 h-10 rounded-xs bg-[#FFF5F2] flex items-center justify-center text-[#FF551A] border border-[#FFE4DC]">
@@ -101,7 +109,7 @@ export const EditorialClosing: React.FC = () => {
           </div>
           <h3 className="font-cairo text-xl font-bold text-[#1E1E1E] leading-[1.35]">تواصل مباشر ومستمر</h3>
           <p className="text-sm text-[#4E4E4E] leading-relaxed font-normal">
-            أرقام هاتفية معتمدة للإجابة الفورية عن استفساراتكم حول المقاسات والأسعار ومواعيد الزيارة.
+            فريق متفانٍ في جميع الفروع للإجابة عن أسئلتكم حول المقاسات، الأسعار، وحجز التوصيل بأعلى درجات الاهتمام.
           </p>
         </div>
       </div>
@@ -110,13 +118,13 @@ export const EditorialClosing: React.FC = () => {
       <div className="bg-[#1E1E1E] text-white p-10 md:p-16 rounded-xs flex flex-col md:flex-row items-center justify-between gap-8 border border-[#2E2E2E] shadow-xl">
         <div className="space-y-3 text-center md:text-right">
           <span className="text-xs text-[#FF551A] font-bold block">
-            زيارة المعرض أو الاستفسار
+            زيارة فروع المتجر أو الاستفسار
           </span>
           <h3 className="font-cairo text-2xl md:text-3xl font-bold text-white leading-[1.3] text-balance-ar">
-            تفضلوا بزيارة معرضنا في بورمل، جيجل
+            تفضلوا بزيارة أيٍّ من فروعنا الثلاثة في جيجل
           </h3>
           <p className="text-sm text-[#CCCCCC] max-w-xl leading-relaxed font-normal">
-            يسعدنا استقبالكم في صالات العرض للتعرف على الموديلات الحقيقية ولمس جودة الأقمشة والخامات.
+            يسعدنا استقبالكم في صالات العرض للتعرف على الموديلات الحقيقية، اختبار الراحة ولمس جودة الأقمشة والخامات.
           </p>
         </div>
 
@@ -131,13 +139,11 @@ export const EditorialClosing: React.FC = () => {
           </a>
 
           <a
-            href="https://maps.app.goo.gl/XYLZfTao58Y5pydc6"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#branches"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xs border border-white/20 transition-colors"
           >
             <Compass className="w-4 h-4 text-[#FF551A]" />
-            <span>خرائط Google</span>
+            <span>استعراض الفروع الـ 3</span>
           </a>
         </div>
       </div>

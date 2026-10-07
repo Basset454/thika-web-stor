@@ -80,7 +80,7 @@ export const EditorialProductScroll: React.FC<EditorialProductScrollProps> = ({ 
               </span>
             </div>
             <h2 className="font-cairo text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.3] text-balance-ar">
-              مختارات المعرض للمعاينة
+              مختارات المتجر الحصرية
             </h2>
           </div>
 

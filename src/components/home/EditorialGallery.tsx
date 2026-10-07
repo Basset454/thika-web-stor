@@ -96,7 +96,7 @@ export const EditorialGallery: React.FC = () => {
     },
     {
       ref: card3Ref,
-      title: 'فضاءات المعرض ببورمل',
+      title: 'فضاءات العرض بجيجل',
       subtitle: 'طوابق متعددة لاستكشاف مختلف التشكيلات',
       aspect: 'aspect-16/9 max-h-[48vh] w-[300px] md:w-[440px]',
       image: '/src/assets/images/showroom_gallery_jijel_1791306361669.jpg',
@@ -120,10 +120,10 @@ export const EditorialGallery: React.FC = () => {
         {/* Editorial Header */}
         <div className="max-w-7xl mx-auto px-6 w-full pt-4 md:pt-8 pb-3 md:pb-4">
           <span className="text-xs font-bold text-[#FF551A] block mb-1.5">
-            معرض الصور البصري
+            ألبوم المتجر البصري
           </span>
           <h2 className="font-cairo text-2xl md:text-4xl lg:text-5xl font-bold text-[#1E1E1E] leading-[1.3] text-balance-ar">
-            مشاهد مختارة من قلب المعرض
+            مشاهد مختارة من قلب فروعنا
           </h2>
         </div>
 

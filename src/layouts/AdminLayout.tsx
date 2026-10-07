@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet, Navigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { TrustLogo } from '../components/TrustLogo';
+import { AdminLogin } from '../pages/admin/AdminLogin';
 import {
   LayoutDashboard,
   Package,
@@ -27,8 +28,13 @@ export const AdminLayout: React.FC = () => {
     );
   }
 
+  // Route Protection: unauthenticated users see the login page at /admin,
+  // or are redirected to /admin if trying to access protected sub-routes (/admin/products, etc.)
   if (!isAuthenticated) {
-    return <Navigate to="/admin/login" replace />;
+    if (location.pathname !== '/admin') {
+      return <Navigate to="/admin" replace />;
+    }
+    return <AdminLogin />;
   }
 
   const navItems = [
@@ -105,11 +111,11 @@ export const AdminLayout: React.FC = () => {
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         <header className="bg-white border-b border-[#E8E2D6] px-8 py-5 flex items-center justify-between">
           <div>
-            <h1 className="text-xl font-bold font-serif-luxury text-[#1A1A1A]">
-              نظام إدارة المعرض المتكامل
+            <h1 className="text-xl font-bold font-cairo text-[#1E1E1E]">
+              نظام إدارة متجر أثاث الثقة
             </h1>
-            <p className="text-xs text-[#7D7365]">
-              البيانات متصلة مباشرة بقاعدة البيانات ويتم تحديثها فورياً في المتجر العام
+            <p className="text-xs text-[#757575]">
+              البيانات متصلة مباشرة بقاعدة البيانات ويتم تحديثها فورياً في المتجر والفروع
             </p>
           </div>
           <div className="flex items-center gap-3">

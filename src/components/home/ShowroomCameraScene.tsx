@@ -140,10 +140,10 @@ export const ShowroomCameraScene: React.FC = () => {
           className="absolute top-8 md:top-14 inset-x-0 z-10 text-center max-w-2xl mx-auto px-6 pointer-events-none will-change-transform"
         >
           <span className="text-xs font-bold text-[#FF551A] block mb-1.5">
-            جولة معمارية في المعرض
+            فضاءات العرض في متجرنا
           </span>
           <h2 className="font-cairo text-2xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-md leading-[1.3] text-balance-ar">
-            معرض فسيح يتنفس الأناقة
+            صالات فسيحة تتنفس الفخامة
           </h2>
         </div>
 
@@ -158,14 +158,14 @@ export const ShowroomCameraScene: React.FC = () => {
               <div className="flex items-center gap-2 text-[#FF551A] mb-2">
                 <MapPin className="w-4 h-4" />
                 <span className="text-xs font-bold text-[#FF551A]">
-                  بورمل · جيجل
+                  3 فروع في ولاية جيجل
                 </span>
               </div>
               <h3 className="font-cairo text-xl font-bold text-white mb-2 leading-[1.35]">
-                معرض داخلي مع طابق تحت الأرض
+                فروع كبرى مع طوابق تحت الأرض
               </h3>
               <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
-                مساحة عرض شاسعة صممت لتتيح لكم التجول بين الأطقم المعروضة وتفقد راحة المقاعد وجودة الخشب والأقمشة عن قرب.
+                مساحات عرض شاسعة في وسط جيجل، بورمل، وحي الفرسان صُممت لتتيح لكم معاينة الأطقم وتفقد راحة المقاعد وجودة الخشب والأقمشة.
               </p>
             </div>
 
@@ -181,10 +181,10 @@ export const ShowroomCameraScene: React.FC = () => {
                 </span>
               </div>
               <h3 className="font-cairo text-xl font-bold text-white mb-2 leading-[1.35]">
-                أكثر من 73,000 متابع يثقون في معروضاتنا
+                أكثر من 73,000 متابع على فيسبوك
               </h3>
               <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
-                "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة." نضع معايير الحرفية والصدق في مقدمة كل تعامل.
+                "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة." متجر رائد في جيجل يضع معايير الحرفية والصدق في مقدمة كل تعامل.
               </p>
             </div>
           </div>
@@ -195,17 +195,17 @@ export const ShowroomCameraScene: React.FC = () => {
       <div className="md:hidden py-12 px-6 space-y-6">
         <div className="space-y-2 text-center pb-2">
           <span className="text-xs font-bold text-[#FF551A] block">
-            جولة معمارية في المعرض
+            فضاءات العرض في متجرنا
           </span>
           <h2 className="font-cairo text-2xl font-bold text-white leading-[1.3]">
-            معرض فسيح يتنفس الأناقة
+            صالات فسيحة تتنفس الفخامة
           </h2>
         </div>
 
         <div className="relative aspect-16/10 w-full rounded-xs overflow-hidden border border-[#3E3E3E] shadow-lg">
           <img
             src="/src/assets/images/showroom_gallery_jijel_1791306361669.jpg"
-            alt="معرض أثاث الثقة في بورمل جيجل"
+            alt="صالات متجر أثاث الثقة في جيجل"
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -217,14 +217,14 @@ export const ShowroomCameraScene: React.FC = () => {
           <div className="flex items-center gap-2 text-[#FF551A]">
             <MapPin className="w-4 h-4" />
             <span className="text-xs font-bold text-[#FF551A]">
-              بورمل · جيجل
+              3 فروع في ولاية جيجل
             </span>
           </div>
           <h3 className="font-cairo text-lg font-bold text-white leading-[1.35]">
-            معرض داخلي مع طابق تحت الأرض
+            فروع كبرى مع طوابق تحت الأرض
           </h3>
           <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
-            مساحة عرض شاسعة صممت لتتيح لكم التجول بين الأطقم المعروضة وتفقد راحة المقاعد وجودة الخشب والأقمشة عن قرب.
+            مساحات عرض شاسعة في وسط جيجل، بورمل، وحي الفرسان صُممت لتتيح لكم معاينة الأطقم وتفقد راحة المقاعد وجودة الخشب والأقمشة.
           </p>
         </div>
 
@@ -237,10 +237,10 @@ export const ShowroomCameraScene: React.FC = () => {
             </span>
           </div>
           <h3 className="font-cairo text-lg font-bold text-white leading-[1.35]">
-            أكثر من 73,000 متابع يثقون في معروضاتنا
+            أكثر من 73,000 متابع على فيسبوك
           </h3>
           <p className="text-sm text-[#CCCCCC] leading-relaxed font-normal">
-            "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة." نضع معايير الحرفية والصدق في مقدمة كل تعامل.
+            "أثاث الثقة… اختيارٌ يليق بمن يرى الفخامة أسلوب حياة." متجر رائد في جيجل يضع معايير الحرفية والصدق في مقدمة كل تعامل.
           </p>
         </div>
       </div>

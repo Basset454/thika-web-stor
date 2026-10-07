@@ -14,7 +14,6 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 
 // Admin Pages
-import { AdminLogin } from './pages/admin/AdminLogin';
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 import { AdminProducts } from './pages/admin/AdminProducts';
 import { AdminCategories } from './pages/admin/AdminCategories';
@@ -36,8 +35,8 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
           </Route>
 
-          {/* Admin Authentication */}
-          <Route path="/admin/login" element={<AdminLogin />} />
+          {/* Admin Area: /admin handles authentication and dashboard */}
+          <Route path="/admin/login" element={<Navigate to="/admin" replace />} />
 
           {/* Protected Admin Dashboard Routes */}
           <Route path="/admin" element={<AdminLayout />}>

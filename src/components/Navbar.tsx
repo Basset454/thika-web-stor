@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, ArrowUpLeft } from 'lucide-react';
+import { Phone, Menu, X, ArrowUpLeft, Facebook, Instagram } from 'lucide-react';
 import { TrustLogo } from './TrustLogo';
 
 export const Navbar: React.FC = () => {
@@ -40,19 +40,46 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage]);
 
+  // Handle hash scrolling if navigating with #branches
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
+      }
+    }
+  }, [location]);
+
   // Close mobile menu on page change
   useEffect(() => {
     setMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   const navLinks = [
     { label: 'الرئيسية', path: '/' },
     { label: 'الصالونات', path: '/salons' },
     { label: 'غرف النوم', path: '/bedrooms' },
     { label: 'كل المنتجات', path: '/products' },
-    { label: 'عن المعرض', path: '/about' },
+    { label: 'فروعنا (3)', path: '/#branches' },
+    { label: 'عن المتجر', path: '/about' },
     { label: 'تواصل معنا', path: '/contact' },
   ];
+
+  const handleLinkClick = (path: string, e: React.MouseEvent) => {
+    if (path.startsWith('/#')) {
+      const hashId = path.split('#')[1];
+      if (isHomePage) {
+        e.preventDefault();
+        const el = document.getElementById(hashId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
 
   // Visual styling calculation
   const isDark = isHomePage ? currentTheme === 'dark' : false;
@@ -73,19 +100,20 @@ export const Navbar: React.FC = () => {
         <Link
           to="/"
           className="group focus-visible:outline-hidden"
-          aria-label="أثاث الثقة جيجل 18 - الصفحة الرئيسية"
+          aria-label="أثاث الثقة جيجل 18 - متجر الأثاث الفاخر"
         >
           <TrustLogo variant={isDark ? 'dark' : 'light'} size="md" />
         </Link>
 
         {/* Zone 2: Clean Cairo navigation links */}
-        <nav className="hidden lg:flex items-center gap-7 text-[15px] font-medium font-cairo">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-[15px] font-medium font-cairo">
           {navLinks.map((link) => {
-            const isActive = location.pathname === link.path;
+            const isActive = location.pathname === link.path && !link.path.includes('#');
             return (
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={(e) => handleLinkClick(link.path, e)}
                 className={`relative py-1.5 transition-colors ${
                   isDark
                     ? isActive
@@ -108,7 +136,39 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Zone 3: Primary actions */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-2">
+          {/* Official Facebook Icon Button */}
+          <a
+            href="https://web.facebook.com/profile.php?id=61563792971318&locale=ar_AR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-2 rounded-xs transition-colors ${
+              isDark
+                ? 'bg-white/10 hover:bg-[#FF551A] text-white border border-white/20'
+                : 'bg-[#F8F8F8] hover:bg-[#FF551A] hover:text-white text-[#1E1E1E] border border-[#E5E5E5]'
+            }`}
+            title="صفحة أثاث الثقة الرسمية على فيسبوك (73K+ متابع)"
+            aria-label="صفحة فيسبوك"
+          >
+            <Facebook className="w-4 h-4" />
+          </a>
+
+          {/* Official Instagram Icon Button */}
+          <a
+            href="https://www.instagram.com/meuble_confiace_18/?hl=ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-2 rounded-xs transition-colors ${
+              isDark
+                ? 'bg-white/10 hover:bg-gradient-to-tr hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] text-white border border-white/20'
+                : 'bg-[#F8F8F8] hover:bg-gradient-to-tr hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:text-white text-[#1E1E1E] border border-[#E5E5E5]'
+            }`}
+            title="حساب أثاث الثقة الرسمي على انستغرام"
+            aria-label="حساب انستغرام"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+
           <a
             href="tel:0560107745"
             className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xs transition-colors whitespace-nowrap font-cairo ${
@@ -131,13 +191,35 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile menu toggle */}
-        <div className="flex sm:hidden items-center gap-2">
+        <div className="flex sm:hidden items-center gap-1.5">
+          <a
+            href="https://web.facebook.com/profile.php?id=61563792971318&locale=ar_AR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-2 rounded-xs ${
+              isDark ? 'bg-white/10 text-white' : 'bg-[#F8F8F8] text-[#1E1E1E]'
+            }`}
+            aria-label="فيسبوك"
+          >
+            <Facebook className="w-4 h-4 text-[#FF551A]" />
+          </a>
+          <a
+            href="https://www.instagram.com/meuble_confiace_18/?hl=ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-2 rounded-xs ${
+              isDark ? 'bg-white/10 text-white' : 'bg-[#F8F8F8] text-[#1E1E1E]'
+            }`}
+            aria-label="انستغرام"
+          >
+            <Instagram className="w-4 h-4 text-[#FF551A]" />
+          </a>
           <a
             href="tel:0560107745"
             className={`p-2 rounded-xs ${
               isDark ? 'bg-white/10 text-white' : 'bg-[#F8F8F8] text-[#1E1E1E]'
             }`}
-            aria-label="الاتصال بالمعرض"
+            aria-label="الاتصال بالمتجر"
           >
             <Phone className="w-4 h-4 text-[#FF551A]" />
           </a>
@@ -161,8 +243,11 @@ export const Navbar: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={(e) => handleLinkClick(link.path, e)}
                 className={`py-2.5 border-b border-[#F0F0F0] flex items-center justify-between ${
-                  location.pathname === link.path ? 'text-[#FF551A] font-bold' : 'text-[#2B2B2B]'
+                  location.pathname === link.path && !link.path.includes('#')
+                    ? 'text-[#FF551A] font-bold'
+                    : 'text-[#2B2B2B]'
                 }`}
               >
                 <span>{link.label}</span>
@@ -170,6 +255,24 @@ export const Navbar: React.FC = () => {
               </Link>
             ))}
             <div className="pt-4 flex flex-col gap-3">
+              <a
+                href="https://web.facebook.com/profile.php?id=61563792971318&locale=ar_AR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 bg-[#1E1E1E] text-white text-sm font-semibold rounded-xs"
+              >
+                <Facebook className="w-4 h-4 text-[#FF551A]" />
+                <span>صفحتنا على فيسبوك (73,000+ متابع)</span>
+              </a>
+              <a
+                href="https://www.instagram.com/meuble_confiace_18/?hl=ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-[#833ab4]/20 via-[#fd1d1d]/20 to-[#fcb045]/20 hover:from-[#833ab4]/30 text-[#1E1E1E] border border-[#E0E0E0] text-sm font-semibold rounded-xs transition-colors"
+              >
+                <Instagram className="w-4 h-4 text-[#E1306C]" />
+                <span>تابعنا على انستغرام</span>
+              </a>
               <a
                 href="tel:0560107745"
                 className="flex items-center justify-center gap-2 py-3 bg-[#F8F8F8] text-[#1E1E1E] text-sm font-semibold rounded-xs border border-[#E5E5E5]"

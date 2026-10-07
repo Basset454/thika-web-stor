@@ -175,9 +175,9 @@ export const CinematicHero: React.FC = () => {
             className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs md:text-sm text-white/90 font-medium font-cairo"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#FF551A]" />
-            <span>بورمل · جيجل 18 · الجزائر</span>
+            <span>3 فروع متكاملة في ولاية جيجل 18</span>
             <span aria-hidden="true" className="opacity-40">·</span>
-            <span className="text-[#FF551A] font-bold">معرض الأثاث الفاخر</span>
+            <span className="text-[#FF551A] font-bold">متجر الأثاث الفاخر</span>
           </div>
 
           {/* Primary Editorial Headline */}
@@ -193,7 +193,7 @@ export const CinematicHero: React.FC = () => {
             ref={subtitleRef}
             className="text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed md:leading-[1.8] font-normal will-change-transform font-cairo"
           >
-            وجهتكم الرائدة في بورمل بجيجل لأرقى الصالونات المعاصرة وغرف النوم المصممة بدقة لتمنح منازلكم دفئاً استثنائياً وفخامة تدوم.
+            أحد أكبر وأرقى متاجر الأثاث في ولاية جيجل عبر 3 فروع متكاملة في مناطق مختلفة. تشكيلات حصرية من الصالونات العصرية وغرف النوم لتمنح منازلكم راحة استثنائية وفخامة تدوم.
           </p>
 
           {/* Action CTAs */}
@@ -209,13 +209,13 @@ export const CinematicHero: React.FC = () => {
               <ArrowUpLeft className="w-4 h-4 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
 
-            <Link
-              to="/contact"
+            <a
+              href="#branches"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xs backdrop-blur-md border border-white/25 transition-colors"
             >
-              <span>تواصل مع الإدارة</span>
+              <span>فروعنا الـ 3 بجيجل</span>
               <Phone className="w-4 h-4 text-[#FF551A]" />
-            </Link>
+            </a>
           </div>
         </div>
 

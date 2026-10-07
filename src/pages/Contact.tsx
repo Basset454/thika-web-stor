@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, ExternalLink, Send, CheckCircle2, Compass, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, ExternalLink, Send, CheckCircle2, Compass, MessageCircle, Facebook, Instagram } from 'lucide-react';
+import { BranchesSection } from '../components/home/BranchesSection';
 
 export const Contact: React.FC = () => {
   const [formSent, setFormSent] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    branch: 'أي فرع / استفسار عام',
     subject: 'استفسار عن تشكيلة الأثاث',
     message: '',
   });
@@ -17,21 +19,21 @@ export const Contact: React.FC = () => {
   };
 
   const whatsappDirectUrl = `https://wa.me/213560107745?text=${encodeURIComponent(
-    `السلام عليكم، أنا ${formData.name || 'زبون'} (${formData.phone || ''}). بخصوص: ${formData.subject}. ${formData.message}`
+    `السلام عليكم، أنا ${formData.name || 'زبون'} (${formData.phone || ''}). بخصوص: ${formData.subject} - الفرع: ${formData.branch}. ${formData.message}`
   )}`;
 
   return (
-    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-16 font-cairo">
+    <div className="pt-28 pb-24 px-6 max-w-7xl mx-auto space-y-20 font-cairo">
       {/* Header */}
-      <div className="max-w-2xl space-y-3.5">
+      <div className="max-w-3xl space-y-3.5">
         <span className="text-xs font-bold text-[#FF551A] block">
-          قنوات التواصل الرسمية
+          قنوات التواصل ومواقع الفروع
         </span>
         <h1 className="font-cairo text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1E1E] leading-[1.3] text-balance-ar">
-          تواصل مع معرض أثاث الثقة
+          تواصل مع متجر أثاث الثقة جيجل 18
         </h1>
         <p className="text-sm md:text-base text-[#4E4E4E] leading-relaxed md:leading-[1.8] font-normal">
-          يسعدنا تواصلكم للإجابة عن استفساراتكم حول المعروضات، الأسعار، أو لمساعدتكم في الوصول إلى مقر المعرض في بورمل بجيجل.
+          يسعدنا تواصلكم للإجابة عن استفساراتكم حول التشكيلات والأسعار، أو لمساعدتكم في الوصول إلى أيٍّ من فروع متجرنا الثلاثة الموزعة في مناطق مختلفة بمدينة جيجل (وسط المدينة، بورمل، وحي الفرسان).
         </p>
       </div>
 
@@ -39,31 +41,57 @@ export const Contact: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Contact Info Details */}
         <div className="lg:col-span-5 space-y-6">
-          {/* Location Card */}
-          <div className="bg-white p-6 rounded-xs border border-[#EEEEEE] space-y-4 shadow-xs">
-            <div className="flex items-center gap-3 text-[#1E1E1E]">
-              <div className="w-10 h-10 rounded-xs bg-[#FFF5F2] flex items-center justify-center text-[#FF551A] border border-[#FFE4DC]">
-                <MapPin className="w-5 h-5" />
+          {/* Official Facebook Channel Card */}
+          <a
+            href="https://web.facebook.com/profile.php?id=61563792971318&locale=ar_AR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-[#1E1E1E] text-white p-6 rounded-xs border border-[#333333] hover:border-[#FF551A] transition-all space-y-3 shadow-md"
+          >
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-xs bg-[#FF551A] flex items-center justify-center text-white">
+                <Facebook className="w-5 h-5" />
               </div>
-              <div>
-                <h3 className="font-cairo text-lg font-bold">موقع المعرض</h3>
-                <p className="text-xs text-[#757575]">بورمل، جيجل، الجزائر</p>
-              </div>
+              <span className="inline-flex items-center gap-1 text-xs text-[#FF551A] font-bold group-hover:underline">
+                <span>زيارة الصفحة</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </span>
             </div>
-            <p className="text-xs text-[#555555] leading-relaxed">
-              معرض داخلي متعدد الطوابق بما في ذلك طابق تحت الأرض لعرض تشكيلات الصالونات وغرف النوم.
-            </p>
-            <a
-              href="https://maps.app.goo.gl/XYLZfTao58Y5pydc6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-[#FF551A] hover:bg-[#E04812] text-white text-xs font-bold rounded-xs transition-colors shadow-xs"
-            >
-              <Compass className="w-4 h-4" />
-              <span>فتح في خرائط Google (GPS)</span>
-              <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-            </a>
-          </div>
+            <div>
+              <h3 className="font-cairo text-lg font-bold text-white group-hover:text-[#FF551A] transition-colors">
+                الصفحة الرسمية على فيسبوك
+              </h3>
+              <p className="text-xs text-[#CCCCCC] mt-1">
+                انضم لأكثر من 73,000 متابع يشاركوننا أحدث كولكشنات الأثاث، العروض، والفيديوهات المصورة من داخل الفروع.
+              </p>
+            </div>
+          </a>
+
+          {/* Official Instagram Channel Card */}
+          <a
+            href="https://www.instagram.com/meuble_confiace_18/?hl=ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-[#1E1E1E] text-white p-6 rounded-xs border border-[#333333] hover:border-[#E1306C] transition-all space-y-3 shadow-md"
+          >
+            <div className="flex items-center justify-between">
+              <div className="w-10 h-10 rounded-xs bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center text-white">
+                <Instagram className="w-5 h-5" />
+              </div>
+              <span className="inline-flex items-center gap-1 text-xs text-[#E1306C] font-bold group-hover:underline">
+                <span>زيارة الحساب</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </span>
+            </div>
+            <div>
+              <h3 className="font-cairo text-lg font-bold text-white group-hover:text-[#E1306C] transition-colors">
+                الحساب الرسمي على انستغرام
+              </h3>
+              <p className="text-xs text-[#CCCCCC] mt-1">
+                تصفح ستوريات وصور وفيديوهات حصرية (Reels) لأحدث الموديلات والأطقم من معارضنا في جيجل.
+              </p>
+            </div>
+          </a>
 
           {/* Phone Numbers Card */}
           <div className="bg-white p-6 rounded-xs border border-[#EEEEEE] space-y-4 shadow-xs">
@@ -73,7 +101,7 @@ export const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-cairo text-lg font-bold">الاتصال الهاتفي المباشر</h3>
-                <p className="text-xs text-[#757575]">أرقام المعرض المعتمدة</p>
+                <p className="text-xs text-[#757575]">أرقام خدمة الزبائن المعتمدة</p>
               </div>
             </div>
 
@@ -130,7 +158,7 @@ export const Contact: React.FC = () => {
               إرسال استفسار مباشر
             </h2>
             <p className="text-xs text-[#757575]">
-              املأ البيانات التالية للتواصل مباشرة مع إدارة المعرض عبر واتساب أو الاتصال.
+              املأ البيانات التالية للتواصل مباشرة مع إدارة المتجر وفروعه عبر واتساب أو الهاتف.
             </p>
           </div>
 
@@ -193,6 +221,22 @@ export const Contact: React.FC = () => {
 
               <div>
                 <label className="block text-xs font-bold text-[#1E1E1E] mb-1.5">
+                  الفرع الأقرب إليك
+                </label>
+                <select
+                  value={formData.branch}
+                  onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
+                  className="w-full px-4 py-2.5 text-xs bg-white border border-[#E0E0E0] rounded-xs focus:outline-hidden focus:border-[#FF551A] text-[#1E1E1E]"
+                >
+                  <option value="أي فرع / استفسار عام">أي فرع / استفسار عام</option>
+                  <option value="أثاث الثقة 1 (وسط مدينة جيجل)">أثاث الثقة 1 (وسط مدينة جيجل)</option>
+                  <option value="أثاث الثقة 2 (منطقة بورمل)">أثاث الثقة 2 (منطقة بورمل)</option>
+                  <option value="أثاث الثقة 3 (حي الفرسان)">أثاث الثقة 3 (حي الفرسان)</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-[#1E1E1E] mb-1.5">
                   موضوع الاستفسار
                 </label>
                 <select
@@ -203,7 +247,7 @@ export const Contact: React.FC = () => {
                   <option value="استفسار عن تشكيلة الصالونات">استفسار عن تشكيلة الصالونات (Livinda, Pilot Plus...)</option>
                   <option value="استفسار عن غرف النوم">استفسار عن غرف النوم</option>
                   <option value="الاستفسار عن السعر والمقاسات">الاستفسار عن السعر والمقاسات</option>
-                  <option value="زيارة المعرض ببورمل">ترتيب زيارة للمعرض في بورمل</option>
+                  <option value="زيارة أحد فروعنا في جيجل">ترتيب زيارة لأحد فروعنا في جيجل</option>
                 </select>
               </div>
 
@@ -225,11 +269,16 @@ export const Contact: React.FC = () => {
                 className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#FF551A] hover:bg-[#E04812] text-white text-xs font-bold rounded-xs transition-colors shadow-xs"
               >
                 <MessageCircle className="w-4 h-4 text-white" />
-                <span>إرسال الاستفسار ومحادثة المعرض عبر واتساب</span>
+                <span>إرسال الاستفسار ومحادثة المتجر عبر واتساب</span>
               </button>
             </form>
           )}
         </div>
+      </div>
+
+      {/* DEDICATED 3 BRANCHES SECTION IN CONTACT PAGE */}
+      <div className="pt-8 border-t border-[#EEEEEE]">
+        <BranchesSection />
       </div>
     </div>
   );

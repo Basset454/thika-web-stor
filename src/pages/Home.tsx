@@ -6,6 +6,7 @@ import { PinnedCollectionStory } from '../components/home/PinnedCollectionStory'
 import { EditorialProductScroll } from '../components/home/EditorialProductScroll';
 import { ShowroomCameraScene } from '../components/home/ShowroomCameraScene';
 import { EditorialGallery } from '../components/home/EditorialGallery';
+import { BranchesSection } from '../components/home/BranchesSection';
 import { EditorialClosing } from '../components/home/EditorialClosing';
 
 const INITIAL_FEATURED_PRODUCTS: Product[] = [
@@ -14,7 +15,7 @@ const INITIAL_FEATURED_PRODUCTS: Product[] = [
     name: 'Salon 6P Livinda',
     slug: 'salon-6p-livinda',
     category: 'صالونات',
-    description: 'صالون فاخر مكون من 6 مقاعد بتصميم عصري وأنسجة راقية تمنح منزلك فخامة استثنائية وراحة متناهية. متوفر حصرياً لدى معرض أثاث الثقة جيجل 18.',
+    description: 'صالون فاخر مكون من 6 مقاعد بتصميم عصري وأنسجة راقية تمنح منزلك فخامة استثنائية وراحة متناهية. متوفر حصرياً لدى متجر أثاث الثقة جيجل 18.',
     images: ['/src/assets/images/salon_livinda_showcase_1791306326700.jpg'],
     mainImage: '/src/assets/images/salon_livinda_showcase_1791306326700.jpg',
     price: null,
@@ -120,7 +121,12 @@ export const Home: React.FC = () => {
         <EditorialGallery />
       </div>
 
-      {/* 7. EDITORIAL PHILOSOPHY & DIRECT CONNECT (Light theme) */}
+      {/* 7. DEDICATED 3 BRANCHES SECTION (Light theme) */}
+      <div data-nav-theme="light">
+        <BranchesSection />
+      </div>
+
+      {/* 8. EDITORIAL PHILOSOPHY & DIRECT CONNECT (Light theme) */}
       <div data-nav-theme="light">
         <EditorialClosing />
       </div>
