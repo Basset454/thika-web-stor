@@ -27,8 +27,7 @@ export const BRANCHES_DATA: Branch[] = [
       'أحدث كولكشن من الصالونات العصرية',
       'موقع حيوي يسهل الوصول إليه',
     ],
-    mapsUrl:
-      'https://www.google.com/maps/place/%D8%A3%D8%AB%D8%A7%D8%AB+%D8%A7%D9%84%D8%AB%D9%82%D8%A91+%D8%AC%D9%8A%D8%AC%D9%84%E2%80%AD/@36.8200257,5.7294576,4607m/data=!3m1!1e3!4m10!1m2!2m1!1z2KPYq9in2Ksg2KfZhNir2YLYqQ!3m6!1s0x12f261002b2eb5d3:0x7b2d2be90dbcde30!8m2!3d36.8206112!4d5.7504023',
+    mapsUrl: 'https://maps.app.goo.gl/18bsg2YY1mJZAwSMA',
     isMain: true,
   },
   {
@@ -44,8 +43,7 @@ export const BRANCHES_DATA: Branch[] = [
       'مساحات شاسعة متعددة الطوابق',
       'سهولة الوصول ومواقف سيارات متوفرة',
     ],
-    mapsUrl:
-      'https://www.google.com/maps/place/%D8%A7%D8%AB%D8%A7%D8%AB+%D8%A7%D9%84%D8%AB%D9%82%D8%A92+%D8%AC%D9%8A%D8%AC%D9%84%E2%80%AD/@36.8117114,5.7185571,4608m/data=!3m1!1e3!4m9!1m2!2m1!1z2KPYq9in2Ksg2KfZhNir2YLYqQ!3m5!1s0x12f25f006eb10d9b:0xb12ebce067b7f061!8m2!3d36.8110757!4d5.7516807',
+    mapsUrl: 'https://maps.app.goo.gl/23mvxY4BJVg5YGxp7',
   },
   {
     id: 'branch-3',
@@ -60,8 +58,7 @@ export const BRANCHES_DATA: Branch[] = [
       'تغطية مخصصة للمنطقة الغربية لجيجل',
       'استشارات تصميم وتأثيث من فريق مختص',
     ],
-    mapsUrl:
-      'https://www.google.com/maps/place/%D8%A3%D8%AB%D8%A7%D8%AB+%D8%A7%D9%84%D8%AB%D9%82%D8%A9+3+%D8%AC%D9%8A%D8%AC%D9%84%E2%80%AD/@36.8118488,5.6986443,4607m/data=!3m1!1e3!4m10!1m2!2m1!1z2KPYq9in2Ksg2KfZhNir2YLYqQ!3m6!1s0x12f25f00341319c7:0x15cac686cc514ab!8m2!3d36.8141843!4d5.740565',
+    mapsUrl: 'https://maps.app.goo.gl/dpALCu6ggfEfVeFc6',
   },
 ];
 
